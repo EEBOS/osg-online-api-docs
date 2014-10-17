@@ -1,0 +1,166 @@
+Crashlog created at 2014-10-17 15:48:56 -0500
+
+===== MESSAGE:
+
+Nanoc::Errors::UnknownFilter: The requested filter, “md”, does not exist.
+
+===== COMPILATION STACK:
+
+  - [item]   / (rep default)
+
+===== STACK TRACE:
+
+  0. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/result_data/item_rep.rb:321:in `filter'
+  1. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/item_rep_proxy.rb:47:in `filter'
+  2. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/rule_context.rb:61:in `filter'
+  3. /media/data/logicalbricks/dev/etherpros/eebos-doc/Rules:22:in `block in parse'
+  4. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/rule.rb:70:in `instance_eval'
+  5. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/rule.rb:70:in `apply_to'
+  6. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:386:in `compile_rep'
+  7. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:342:in `block in compile_reps'
+  8. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:335:in `loop'
+  9. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:335:in `compile_reps'
+  10. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/compilation/compiler.rb:89:in `run'
+  11. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/base/source_data/site.rb:59:in `compile'
+  12. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/commands/compile.rb:397:in `block in run'
+  13. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/commands/compile.rb:438:in `run_listeners_while'
+  14. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/commands/compile.rb:396:in `run'
+  15. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/command_runner.rb:14:in `block in call'
+  16. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  17. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  18. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/command_runner.rb:13:in `call'
+  19. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command_dsl.rb:223:in `block in runner'
+  20. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  21. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  22. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  23. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/commands/nanoc.rb:39:in `block in define'
+  24. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:298:in `call'
+  25. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:298:in `run_this'
+  26. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib/cri/command.rb:251:in `run'
+  27. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli.rb:59:in `block in run'
+  28. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:74:in `handle_while'
+  29. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli/error_handler.rb:26:in `handle_while'
+  30. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib/nanoc/cli.rb:57:in `run'
+  31. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/bin/nanoc:25:in `<top (required)>'
+  32. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/bin/nanoc:23:in `load'
+  33. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/bin/nanoc:23:in `<main>'
+  34. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/bin/ruby_executable_hooks:15:in `eval'
+
+===== VERSION INFORMATION:
+
+nanoc 3.7.3 © 2007-2014 Denis Defreyne.
+Running ruby 1.9.3 (2014-05-14) on x86_64-linux with RubyGems 2.2.2.
+
+===== SYSTEM INFORMATION:
+
+Linux nemesis 3.15.5-1-CHAKRA #1 SMP Thu Jul 10 20:04:01 UTC 2014 x86_64 GNU/Linux
+
+===== INSTALLED GEMS:
+
+  adsf 1.2.0
+  bigdecimal 1.1.0
+  bundler 1.6.3
+  bundler-unload 1.0.2
+  colored 1.2
+  cri 2.6.1
+  executable-hooks 1.3.2
+  gem-wrappers 1.2.5
+  haml 4.0.5
+  io-console 0.3
+  json 1.5.5
+  minitest 2.5.1
+  nanoc 3.7.3
+  rack 1.6.0.beta
+  rake 0.9.2.2
+  rdoc 3.9.5
+  rubygems-bundler 1.4.4
+  rvm 1.11.3.9
+  tilt 2.0.1
+
+===== ENVIRONMENT:
+
+ANT_HOME => "/usr/share/java/apache-ant"
+COLORFGBG => "15;0"
+DBUS_SESSION_BUS_ADDRESS => "unix:abstract=/tmp/dbus-lOtGjuO5Fz,guid=7585415cbfe4f583410d39d254412902"
+DESKTOP_SESSION => "default"
+DISPLAY => ":0"
+DM_CONTROL => "/var/run/xdmctl"
+GEM_HOME => "/home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc"
+GEM_PATH => "/home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc:/home/fernando/.rvm/gems/ruby-1.9.3-p547@global"
+GPG_AGENT_INFO => "/tmp/gpg-azObFS/S.gpg-agent:584:1"
+GS_LIB => "/home/fernando/.fonts"
+GTK2_RC_FILES => "/etc/gtk-2.0/gtkrc:/home/fernando/.gtkrc-2.0:/home/fernando/.kde4/share/config/gtkrc-2.0"
+GTK_RC_FILES => "/etc/gtk/gtkrc:/home/fernando/.gtkrc:/home/fernando/.kde4/share/config/gtkrc"
+HOME => "/home/fernando"
+IRBRC => "/home/fernando/.rvm/rubies/ruby-1.9.3-p547/.irbrc"
+J2REDIR => "/usr/lib/jvm/java-7-openjdk/jre"
+J2SDKDIR => "/usr/lib/jvm/java-7-openjdk"
+JAVA_HOME => "/usr/lib/jvm/java-7-openjdk"
+KDE_FULL_SESSION => "true"
+KDE_MULTIHEAD => "false"
+KDE_SESSION_UID => "1000"
+KDE_SESSION_VERSION => "4"
+KONSOLE_DBUS_SERVICE => ":1.35"
+KONSOLE_DBUS_SESSION => "/Sessions/11"
+KONSOLE_PROFILE_NAME => "Intérprete de órdenes"
+LANG => "es_MX.UTF-8"
+LANGUAGE => ""
+LC_MESSAGES => "es_MX.UTF-8"
+LOGNAME => "fernando"
+MAIL => "/var/spool/mail/fernando"
+MOZ_PLUGIN_PATH => "/usr/lib/mozilla/plugins:/extra/usr/lib/mozilla/plugins"
+MY_RUBY_HOME => "/home/fernando/.rvm/rubies/ruby-1.9.3-p547"
+OLDPWD => "/home/fernando/logicalbricks/dev/etherpros"
+PATH => "/home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/bin:/home/fernando/.rvm/gems/ruby-1.9.3-p547@global/bin:/home/fernando/.rvm/rubies/ruby-1.9.3-p547/bin:/home/fernando/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/share/java/apache-ant/bin:/usr/bin/core_perl"
+PROFILEHOME => ""
+PWD => "/home/fernando/logicalbricks/dev/etherpros/eebos-doc"
+QT_PLUGIN_PATH => "/home/fernando/.kde4/lib/kde4/plugins/:/usr/lib/kde4/plugins/"
+RUBY_VERSION => "ruby-1.9.3-p547"
+SESSION_MANAGER => "local/nemesis:@/tmp/.ICE-unix/629,unix/nemesis:/tmp/.ICE-unix/629"
+SHELL => "/bin/bash"
+SHELL_SESSION_ID => "269785f5e6534000838cee8f4165ebed"
+SHLVL => "2"
+SSH_AGENT_PID => "587"
+SSH_AUTH_SOCK => "/tmp/ssh-djtT3JNFSWPG/agent.586"
+TERM => "xterm"
+USER => "fernando"
+WINDOWID => "46137371"
+WINDOWPATH => "7"
+XCURSOR_THEME => "Oxygen_White"
+XDG_CURRENT_DESKTOP => "KDE"
+XDG_DATA_DIRS => "/usr/share:/usr/share:/usr/local/share"
+XDG_RUNTIME_DIR => "/run/user/1000"
+XDG_SEAT => "seat0"
+XDG_SESSION_ID => "c1"
+XDG_VTNR => "7"
+XDM_MANAGED => "method=classic,auto"
+_ => "/home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/bin/nanoc"
+_ORIGINAL_GEM_PATH => "/home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc:/home/fernando/.rvm/gems/ruby-1.9.3-p547@global"
+_system_arch => "x86_64"
+_system_name => "unknown"
+_system_type => "Linux"
+_system_version => "libc-2.19"
+rvm_bin_path => "/home/fernando/.rvm/bin"
+rvm_path => "/home/fernando/.rvm"
+rvm_prefix => "/home/fernando"
+rvm_version => "1.25.28 (master)"
+
+===== LOAD PATHS:
+
+  0. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib
+  1. /home/fernando/.rvm/gems/ruby-1.9.3-p547@global/extensions/x86_64-linux/1.9.1/executable-hooks-1.3.2
+  2. /home/fernando/.rvm/gems/ruby-1.9.3-p547@global/gems/executable-hooks-1.3.2/lib
+  3. /home/fernando/.rvm/gems/ruby-1.9.3-p547@global/gems/bundler-unload-1.0.2/lib
+  4. /home/fernando/.rvm/gems/ruby-1.9.3-p547@global/gems/rubygems-bundler-1.4.4/lib
+  5. /home/fernando/.rvm/gems/ruby-1.9.3-p547@global/gems/bundler-1.6.3/lib
+  6. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/colored-1.2/lib
+  7. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/cri-2.6.1/lib
+  8. /home/fernando/.rvm/gems/ruby-1.9.3-p547@eebos-doc/gems/nanoc-3.7.3/lib
+  9. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/site_ruby/1.9.1
+  10. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/site_ruby/1.9.1/x86_64-linux
+  11. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/site_ruby
+  12. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/vendor_ruby/1.9.1
+  13. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/vendor_ruby/1.9.1/x86_64-linux
+  14. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/vendor_ruby
+  15. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/1.9.1
+  16. /home/fernando/.rvm/rubies/ruby-1.9.3-p547/lib/ruby/1.9.1/x86_64-linux

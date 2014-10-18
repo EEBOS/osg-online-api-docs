@@ -37,8 +37,8 @@ To create a new user, send a `POST` request to the base users' endpoint with the
 
 | Name        | Type   | Required? | Description                                              |
 |-------------|--------|-----------|----------------------------------------------------------|
-| ids         | array  | yes       | List of login ids to which the courses will be assigned  |
-| course_ids  | array  | yes       | List of course ids that will be assigned                 |
+| ids         | array  | yes       | List of course ids that will be assigned                 |
+| login_ids   | array  | yes       | List of login ids to which the courses will be assigned  |
 
 #### Sample request body
 
@@ -46,8 +46,8 @@ An example request body to assign the course with `id` 2 to users with `id` 1 an
 
 ```
   {
-    ids: [1, 2],
-    course_ids: [2]
+    ids: [2],
+    login_ids: [1, 2]
   }
 ```
 

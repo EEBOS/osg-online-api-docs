@@ -18,5 +18,6 @@ All of our API endpoints' responses are in `JSON` format.
 
 # Services
 
-* [Users](/api/users/index.html)
+* [Logins](/api/logins/index.html)
 * [Courses](/api/courses/index.html)
+* [Inventories](/api/inventories/index.html)

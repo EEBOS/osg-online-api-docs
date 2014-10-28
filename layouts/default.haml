@@ -6,6 +6,7 @@
         A Brand New nanoc Site - #{@item[:title]}
       %link{:href => @items['/stylesheet/'].path, :rel => "stylesheet"}
       %script{ type: 'text/javascript', src: @items['/scripts/'].path }
+      %script{ type: 'text/javascript', src: @items['/jquery/'].path }
         / you don't need to keep this, but it's cool for stats!
         %meta{:content => "nanoc #{Nanoc::VERSION}", :name => "generator"}
   %body

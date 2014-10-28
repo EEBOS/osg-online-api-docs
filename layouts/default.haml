@@ -8,16 +8,19 @@
         / you don't need to keep this, but it's cool for stats!
         %meta{:content => "nanoc #{Nanoc::VERSION}", :name => "generator"}
   %body
-    #main
-      = yield
-    #sidebar
-      %h2 API
-      %ul
-        %li
-          %a{:href => "/api/index.html"} Getting Started
-        %li
-          %a{:href => "/api/logins/index.html"} Logins
-        %li
-          %a{:href => "/api/courses/index.html"} Courses
-        %li
-          %a{:href => "/api/inventories/index.html"} Inventories
+    %header
+      %img{:src => "/img/logo.png"}
+    #wrapper.cf
+      #main
+        = yield
+      #sidebar
+        %h2 API
+        %ul
+          %li
+            %a{:href => "/api/index.html"} Getting Started
+          %li
+            %a{:href => "/api/logins/index.html"} Logins
+          %li
+            %a{:href => "/api/courses/index.html"} Courses
+          %li
+            %a{:href => "/api/inventories/index.html"} Inventories

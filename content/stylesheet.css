@@ -2,11 +2,44 @@
   margin: 0;
   padding: 0;
 
-  font-family: Georgia, Palatino, serif;
+  font-family: "Open Sans","Helvetica Neue","Arial",sans-serif;
 }
 
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+
 body {
-  background: #fff;
+    min-width: 980px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    background: #f5f4f1 url("img/mainbg.png");
+    color: #494944;
 }
 
 a {
@@ -22,12 +55,28 @@ a:hover {
   color: #f90;
 }
 
+
+header {
+    width: 980px;
+    margin: 35px auto;
+}
+
+#wrapper {
+    width: 980px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 15px;
+
+    background-color: #f8f8f5;
+    border: 1px solid white;
+    -webkit-box-shadow: 0px 0px 2px #a6a69a;
+    box-shadow: 0px 0px 2px #a6a69a;
+    border-radius: 2px;
+}
+
+
 #main {
-  position: absolute;
-
-  top: 40px;
-  left: 280px;
-
+  float: right;
   width: 750px;
 }
 
@@ -63,11 +112,10 @@ a:hover {
 }
 
 #sidebar {
-  position: absolute;
 
   top: 40px;
   left: 20px;
-  width: 200px;
+  width: 140px;
 
   padding: 20px 20px 0 0;
 
@@ -99,3 +147,4 @@ a:hover {
 
   line-height: 20px;
 }
+

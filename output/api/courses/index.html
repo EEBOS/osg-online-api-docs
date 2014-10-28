@@ -12,53 +12,58 @@
     </meta>
   </head>
   <body>
-    <div id='main'>
-      
-      <h2 id="courses">Courses</h2>
-      
-      <p>The <code>/api/courses</code> endpoint a couple of methods to let you retrieve information about the existing courses and assign units to your users.</p>
-      
-      <h3 id="list">List</h3>
-      
-      <p>To retrieve the list of courses, send a <code>GET</code> request to the base courses’ endpoint, no extra parameters are required.</p>
-      
-      <p><code>GET https://learninglogin.com/api/courses</code></p>
-      
-      <h4 id="sample-response-body">Sample response body</h4>
-      
-      <p><code>
-        [
-          {
-            "id": 1,
-            "name": "Aerial Lift",
-            "code": "AL",
-            "language": "English"
-          },
-          {
-            "id": 2,
-            "name": "AODA",
-            "code": "AODA",
-            "language": French
-          }
-        ]
-      </code></p>
-    </div>
-    <div id='sidebar'>
-      <h2>API</h2>
-      <ul>
-        <li>
-          <a href='/api/index.html'>Getting Started</a>
-        </li>
-        <li>
-          <a href='/api/logins/index.html'>Logins</a>
-        </li>
-        <li>
-          <a href='/api/courses/index.html'>Courses</a>
-        </li>
-        <li>
-          <a href='/api/inventories/index.html'>Inventories</a>
-        </li>
-      </ul>
+    <header>
+      <img src='/img/logo.png'>
+    </header>
+    <div class='cf' id='wrapper'>
+      <div id='main'>
+        
+        <h2 id="courses">Courses</h2>
+        
+        <p>The <code>/api/courses</code> endpoint a couple of methods to let you retrieve information about the existing courses and assign units to your users.</p>
+        
+        <h3 id="list">List</h3>
+        
+        <p>To retrieve the list of courses, send a <code>GET</code> request to the base courses’ endpoint, no extra parameters are required.</p>
+        
+        <p><code>GET https://learninglogin.com/api/courses</code></p>
+        
+        <h4 id="sample-response-body">Sample response body</h4>
+        
+        <p><code>
+          [
+            {
+              "id": 1,
+              "name": "Aerial Lift",
+              "code": "AL",
+              "language": "English"
+            },
+            {
+              "id": 2,
+              "name": "AODA",
+              "code": "AODA",
+              "language": French
+            }
+          ]
+        </code></p>
+      </div>
+      <div id='sidebar'>
+        <h2>API</h2>
+        <ul>
+          <li>
+            <a href='/api/index.html'>Getting Started</a>
+          </li>
+          <li>
+            <a href='/api/logins/index.html'>Logins</a>
+          </li>
+          <li>
+            <a href='/api/courses/index.html'>Courses</a>
+          </li>
+          <li>
+            <a href='/api/inventories/index.html'>Inventories</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -12,207 +12,212 @@
     </meta>
   </head>
   <body>
-    <div id='main'>
-      
-      <h2 id="logins">Logins</h2>
-      
-      <p>The <code>/api/logins/{ login_id }</code> endpoint implements RESTful methods to let you interact with your data.</p>
-      
-      <h3 id="list">List</h3>
-      
-      <p>To retrieve the list of logins from your account, simply send a <code>GET</code> request to the base logins’ endpoint, no extra parameters are required.</p>
-      
-      <p><code>GET https://learninglogin.com/api/logins</code></p>
-      
-      <h4 id="sample-response-body">Sample response body</h4>
-      
-      <p><code>
-        [
-          {
-            "id":123456,
-            "first_name": "Demo",
-            "last_name": "Login",
-            "username": "demo_login",
-            "email": "demo_login@learninglocin.com",
-            "role": "Global Publisher"
-          },
-          {
-            "id":123457,
-            "first_name": "Demo",
-            "last_name": "Login2",
-            "username": "demo_login2",
-            "email": "demo_login2@learninglocin.com",
-            "role": "Global Publisher"
-          }
-        ]
-      </code></p>
-      
-      <h3 id="create">Create</h3>
-      
-      <p>To create a new login, send a <code>POST</code> request to the base logins’ endpoint with the following parameters:</p>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Required?</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>first_name</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s first name</td>
-          </tr>
-          <tr>
-            <td>last_name</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s last name</td>
-          </tr>
-          <tr>
-            <td>email</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s email address</td>
-          </tr>
-          <tr>
-            <td>username</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s username, required to access the system</td>
-          </tr>
-          <tr>
-            <td>password</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s password</td>
-          </tr>
-          <tr>
-            <td>role_string</td>
-            <td>string</td>
-            <td>yes</td>
-            <td>Login’s role: Can be ‘Trainee’, ‘Global publisher’</td>
-          </tr>
-          <tr>
-            <td>udf_list</td>
-            <td>array</td>
-            <td>no</td>
-            <td>List of tags associated to the login</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <h4 id="sample-request-body">Sample request body</h4>
-      
-      <p><code>
-        {
-          login: {
-            first_name:'first',
-            last_name:'last',
-            email:'login@mail.com',
-            username:'username',
-            udf_list: ['accounting', 'service'],
-            role_string: 'Trainee',
-            password: 'abc123'
-          }
-        }
-      </code></p>
-      
-      <h4 id="sample-response-body-1">Sample response body</h4>
-      
-      <p>When the login is successfully created, our API will send a <code>JSON</code> response with the newly created login’s information:</p>
-      
-      <p><code>
-        {
-          "id": 2,
-          "first_name": "first",
-          "last_name": "last",
-          "username": "username",
-          "email": "ememe@lsl.de",
-          "role": "Trainee"
-        }
-      </code></p>
-      
-      <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
-      
-      <p><code>
-        {
-          "errors": [
-            "Login role can't be blank", 
-            "Login password can't be blank"
+    <header>
+      <img src='/img/logo.png'>
+    </header>
+    <div class='cf' id='wrapper'>
+      <div id='main'>
+        
+        <h2 id="logins">Logins</h2>
+        
+        <p>The <code>/api/logins/{ login_id }</code> endpoint implements RESTful methods to let you interact with your data.</p>
+        
+        <h3 id="list">List</h3>
+        
+        <p>To retrieve the list of logins from your account, simply send a <code>GET</code> request to the base logins’ endpoint, no extra parameters are required.</p>
+        
+        <p><code>GET https://learninglogin.com/api/logins</code></p>
+        
+        <h4 id="sample-response-body">Sample response body</h4>
+        
+        <p><code>
+          [
+            {
+              "id":123456,
+              "first_name": "Demo",
+              "last_name": "Login",
+              "username": "demo_login",
+              "email": "demo_login@learninglocin.com",
+              "role": "Global Publisher"
+            },
+            {
+              "id":123457,
+              "first_name": "Demo",
+              "last_name": "Login2",
+              "username": "demo_login2",
+              "email": "demo_login2@learninglocin.com",
+              "role": "Global Publisher"
+            }
           ]
-        }
-      </code></p>
-      
-      <h3 id="update">Update</h3>
-      
-      <p>To update an existing login, send a <code>PUT</code> request to the logins’ endpoint <code>/api/logins/{ login_id }</code> with the parameters you want to update, the same <a href="#create">parameters used when creating a login</a> are supported.</p>
-      
-      <h4 id="sample-request-body-1">Sample request body</h4>
-      
-      <p>An example request body to update a login’s name might be:</p>
-      
-      <p><code>
-        {
-          login: {
-            first_name: 'New name'
+        </code></p>
+        
+        <h3 id="create">Create</h3>
+        
+        <p>To create a new login, send a <code>POST</code> request to the base logins’ endpoint with the following parameters:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Required?</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>first_name</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s first name</td>
+            </tr>
+            <tr>
+              <td>last_name</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s last name</td>
+            </tr>
+            <tr>
+              <td>email</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s email address</td>
+            </tr>
+            <tr>
+              <td>username</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s username, required to access the system</td>
+            </tr>
+            <tr>
+              <td>password</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s password</td>
+            </tr>
+            <tr>
+              <td>role_string</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Login’s role: Can be ‘Trainee’, ‘Global publisher’</td>
+            </tr>
+            <tr>
+              <td>udf_list</td>
+              <td>array</td>
+              <td>no</td>
+              <td>List of tags associated to the login</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h4 id="sample-request-body">Sample request body</h4>
+        
+        <p><code>
+          {
+            login: {
+              first_name:'first',
+              last_name:'last',
+              email:'login@mail.com',
+              username:'username',
+              udf_list: ['accounting', 'service'],
+              role_string: 'Trainee',
+              password: 'abc123'
+            }
           }
-        }
-      </code></p>
-      
-      <h4 id="sample-response-body-2">Sample response body</h4>
-      
-      <p>When the login is successfully updated, our API will send a <code>JSON</code> response with the updated login’s information:</p>
-      
-      <p><code>
-        {
-          "id": 2,
-          "first_name": "New name",
-          "last_name": "last",
-          "username": "username",
-          "email": "ememe@lsl.de",
-          "role": "Trainee"
-        }
-      </code></p>
-      
-      <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
-      
-      <p><code>
-        {
-          "errors": [
-            "First name can't be blank"
-          ]
-        }
-      </code></p>
-      
-      <h3 id="remove">Remove</h3>
-      
-      <p>To remove a login, send a <code>DELETE</code> request to the logins’ endpoint <code>/api/logins/{ login_id }</code>, no parameters are required.</p>
-      
-      <p>When the login is successfully removed, our API will send an empty <code>JSON</code> response.</p>
-      
-      <p>If something goes wrong, the API will respond with a <code>422</code> error code and an empty <code>JSON</code> response.</p>
-    </div>
-    <div id='sidebar'>
-      <h2>API</h2>
-      <ul>
-        <li>
-          <a href='/api/index.html'>Getting Started</a>
-        </li>
-        <li>
-          <a href='/api/logins/index.html'>Logins</a>
-        </li>
-        <li>
-          <a href='/api/courses/index.html'>Courses</a>
-        </li>
-        <li>
-          <a href='/api/inventories/index.html'>Inventories</a>
-        </li>
-      </ul>
+        </code></p>
+        
+        <h4 id="sample-response-body-1">Sample response body</h4>
+        
+        <p>When the login is successfully created, our API will send a <code>JSON</code> response with the newly created login’s information:</p>
+        
+        <p><code>
+          {
+            "id": 2,
+            "first_name": "first",
+            "last_name": "last",
+            "username": "username",
+            "email": "ememe@lsl.de",
+            "role": "Trainee"
+          }
+        </code></p>
+        
+        <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
+        
+        <p><code>
+          {
+            "errors": [
+              "Login role can't be blank", 
+              "Login password can't be blank"
+            ]
+          }
+        </code></p>
+        
+        <h3 id="update">Update</h3>
+        
+        <p>To update an existing login, send a <code>PUT</code> request to the logins’ endpoint <code>/api/logins/{ login_id }</code> with the parameters you want to update, the same <a href="#create">parameters used when creating a login</a> are supported.</p>
+        
+        <h4 id="sample-request-body-1">Sample request body</h4>
+        
+        <p>An example request body to update a login’s name might be:</p>
+        
+        <p><code>
+          {
+            login: {
+              first_name: 'New name'
+            }
+          }
+        </code></p>
+        
+        <h4 id="sample-response-body-2">Sample response body</h4>
+        
+        <p>When the login is successfully updated, our API will send a <code>JSON</code> response with the updated login’s information:</p>
+        
+        <p><code>
+          {
+            "id": 2,
+            "first_name": "New name",
+            "last_name": "last",
+            "username": "username",
+            "email": "ememe@lsl.de",
+            "role": "Trainee"
+          }
+        </code></p>
+        
+        <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
+        
+        <p><code>
+          {
+            "errors": [
+              "First name can't be blank"
+            ]
+          }
+        </code></p>
+        
+        <h3 id="remove">Remove</h3>
+        
+        <p>To remove a login, send a <code>DELETE</code> request to the logins’ endpoint <code>/api/logins/{ login_id }</code>, no parameters are required.</p>
+        
+        <p>When the login is successfully removed, our API will send an empty <code>JSON</code> response.</p>
+        
+        <p>If something goes wrong, the API will respond with a <code>422</code> error code and an empty <code>JSON</code> response.</p>
+      </div>
+      <div id='sidebar'>
+        <h2>API</h2>
+        <ul>
+          <li>
+            <a href='/api/index.html'>Getting Started</a>
+          </li>
+          <li>
+            <a href='/api/logins/index.html'>Logins</a>
+          </li>
+          <li>
+            <a href='/api/courses/index.html'>Courses</a>
+          </li>
+          <li>
+            <a href='/api/inventories/index.html'>Inventories</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

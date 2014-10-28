@@ -12,46 +12,51 @@
     </meta>
   </head>
   <body>
-    <div id='main'>
-      
-      <h1 id="api">API</h1>
-      
-      <p>In order to interact with our API, you’re required to include an authentication token in the header of every request; this token will be provided to you by your distributor.</p>
-      
-      <p>For instance, to retrieve the list of users from your account, you can make the following request via <code>curl</code> command.</p>
-      
-      <p><code>
-      curl http://learninglogin.com/api/users -H 'Authorization: Token token="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
-      </code></p>
-      
-      <p>In case you receive a <code>HTTP Token: Access denied.</code> response, there’s a big chance your access token is either expired or wrong.</p>
-      
-      <p>All of our API endpoints’ responses are in <code>JSON</code> format.</p>
-      
-      <h1 id="services">Services</h1>
-      
-      <ul>
-        <li><a href="/api/logins/index.html">Logins</a></li>
-        <li><a href="/api/courses/index.html">Courses</a></li>
-        <li><a href="/api/inventories/index.html">Inventories</a></li>
-      </ul>
-    </div>
-    <div id='sidebar'>
-      <h2>API</h2>
-      <ul>
-        <li>
-          <a href='/api/index.html'>Getting Started</a>
-        </li>
-        <li>
-          <a href='/api/logins/index.html'>Logins</a>
-        </li>
-        <li>
-          <a href='/api/courses/index.html'>Courses</a>
-        </li>
-        <li>
-          <a href='/api/inventories/index.html'>Inventories</a>
-        </li>
-      </ul>
+    <header>
+      <img src='/img/logo.png'>
+    </header>
+    <div class='cf' id='wrapper'>
+      <div id='main'>
+        
+        <h1 id="api">API</h1>
+        
+        <p>In order to interact with our API, you’re required to include an authentication token in the header of every request; this token will be provided to you by your distributor.</p>
+        
+        <p>For instance, to retrieve the list of users from your account, you can make the following request via <code>curl</code> command.</p>
+        
+        <p><code>
+        curl http://learninglogin.com/api/users -H 'Authorization: Token token="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+        </code></p>
+        
+        <p>In case you receive a <code>HTTP Token: Access denied.</code> response, there’s a big chance your access token is either expired or wrong.</p>
+        
+        <p>All of our API endpoints’ responses are in <code>JSON</code> format.</p>
+        
+        <h1 id="services">Services</h1>
+        
+        <ul>
+          <li><a href="/api/logins/index.html">Logins</a></li>
+          <li><a href="/api/courses/index.html">Courses</a></li>
+          <li><a href="/api/inventories/index.html">Inventories</a></li>
+        </ul>
+      </div>
+      <div id='sidebar'>
+        <h2>API</h2>
+        <ul>
+          <li>
+            <a href='/api/index.html'>Getting Started</a>
+          </li>
+          <li>
+            <a href='/api/logins/index.html'>Logins</a>
+          </li>
+          <li>
+            <a href='/api/courses/index.html'>Courses</a>
+          </li>
+          <li>
+            <a href='/api/inventories/index.html'>Inventories</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

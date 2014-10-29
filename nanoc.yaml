@@ -72,3 +72,11 @@ checks:
     # E.g.:
     #   exclude: ['^/server_status']
     exclude: []
+
+deploy:
+  staging:
+    kind: rsync
+    dst: "deployer@distributorlogin.com:/home/deployer/apps/lms_guides"
+  production:
+    kind: rsync
+    dst: "deployer@learninglogin.com:/home/deployer/apps/lms_guides"

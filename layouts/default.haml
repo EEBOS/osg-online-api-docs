@@ -18,13 +18,13 @@
         %h2 API
         %ul
           %li
-            %a.active{:href => "/api/index.html"} Getting Started
+            = link_to_navigation 'Getting Started', '/api/index.html'
           %li
-            %a{:href => "/api/logins/index.html"} Logins
+            = link_to_navigation 'Logins', '/api/logins/index.html'
           %li
-            %a{:href => "/api/courses/index.html"} Courses
+            = link_to_navigation 'Courses', '/api/courses/index.html'
           %li
-            %a{:href => "/api/inventories/index.html"} Inventories
+            = link_to_navigation 'Inventories', '/api/inventories/index.html'
 
       #main
         = yield

@@ -43,16 +43,29 @@ body {
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
+    color: #494944;
+    padding: 4px 15px;
+    margin: 3px 0;
+    display: block;
+}
+
+a.active {
+    background: #f8f8f5;
+    border: 1px solid white;
+    border-right: none;
+    box-shadow: -1px 2px 6px -2px #ccc;
+    color: #8bae36 !important;
+    text-shadow: 1px 1px #fff;
 }
 
 a:link,
 a:visited {
-  color: #f30;
+  color: #494944;
 }
 
 a:hover {
-  color: #f90;
+  color:  #8bae36;
 }
 
 
@@ -65,7 +78,6 @@ header {
     width: 980px;
     margin: 0 auto;
     margin-bottom: 20px;
-    padding: 15px;
 
     background-color: #f8f8f5;
     border: 1px solid white;
@@ -76,11 +88,16 @@ header {
 
 
 #main {
-  float: right;
-  width: 750px;
+    width: 750px;
+    height: auto;
+    display: table-cell;
+    padding: 22px;
+    border-left: 1px solid white;
 }
 
 #main h1 {
+  color:  #8bae36;
+  text-shadow: 1px 1px #ffffff;
   font-size: 40px;
   font-weight: normal;
 
@@ -89,12 +106,21 @@ header {
   letter-spacing: -1px;
 }
 
+#main h2 {
+  font-size: 25px;
+  color:  #8bae36;
+  text-shadow: 1px 1px #ffffff;
+}
+
 #main p {
   margin: 20px 0;
 
   font-size: 15px;
 
   line-height: 20px;
+
+  font-weight: lighter;
+
 }
 
 #main ul, #main ol {
@@ -102,9 +128,9 @@ header {
 }
 
 #main li {
-  font-size: 15px;
-
-  line-height: 20px;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 27px;
 }
 
 #main ul li {
@@ -112,28 +138,27 @@ header {
 }
 
 #sidebar {
-
-  top: 40px;
-  left: 20px;
-  width: 140px;
-
-  padding: 20px 20px 0 0;
-
-  border-right: 1px solid #ccc;
-
-  text-align: right;
+    width: 185px;
+    height: 100%;
+    display: table-cell;
+    padding: 20px 0px 0 0;
+    text-align: right;
+    box-shadow: inset -3px 0px 10px -5px #ccc;
+    background: -webkit-linear-gradient(left, #ffffff 0%,#f2f2ef 100%);
 }
 
 #sidebar h2 {
   text-transform: uppercase;
 
-  font-size: 13px;
+  font-size: 16px;
 
-  color: #333;
+  color: #8a8a7c;
 
   letter-spacing: 1px;
 
   line-height: 20px;
+
+  margin-right: 15px;
 }
 
 #sidebar ul {
@@ -143,8 +168,8 @@ header {
 }
 
 #sidebar li {
-  font-size: 14px;
-
-  line-height: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+  line-height: 27px;
 }
 

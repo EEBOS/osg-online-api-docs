@@ -2,6 +2,7 @@
 title: Logins
 ---
 
+
 ## Logins
 
 The `/api/logins/{ login_id }` endpoint implements RESTful methods to let you interact with your data.
@@ -14,26 +15,26 @@ To retrieve the list of logins from your account, simply send a `GET` request to
 
 #### Sample response body
 
-```
-  [
-    {
-      "id":123456,
-      "first_name": "Demo",
-      "last_name": "Login",
-      "username": "demo_login",
-      "email": "demo_login@learninglocin.com",
-      "role": "Global Publisher"
-    },
-    {
-      "id":123457,
-      "first_name": "Demo",
-      "last_name": "Login2",
-      "username": "demo_login2",
-      "email": "demo_login2@learninglocin.com",
-      "role": "Global Publisher"
-    }
-  ]
-```
+~~~json
+[
+{
+  "id":123456,
+  "first_name": "Demo",
+  "last_name": "Login",
+  "username": "demo_login",
+  "email": "demo_login@learninglocin.com",
+  "role": "Global Publisher"
+},
+{
+  "id":123457,
+  "first_name": "Demo",
+  "last_name": "Login2",
+  "username": "demo_login2",
+  "email": "demo_login2@learninglocin.com",
+  "role": "Global Publisher"
+}
+]
+~~~
 
 ### Create
 
@@ -51,7 +52,7 @@ To create a new login, send a `POST` request to the base logins' endpoint with t
 
 #### Sample request body
 
-```
+~~~json
   {
     login: {
       first_name:'first',
@@ -63,13 +64,13 @@ To create a new login, send a `POST` request to the base logins' endpoint with t
       password: 'abc123'
     }
   }
-```
+~~~
 
 #### Sample response body
 
 When the login is successfully created, our API will send a `JSON` response with the newly created login's information:
 
-```
+~~~json
   {
     "id": 2,
     "first_name": "first",
@@ -78,18 +79,18 @@ When the login is successfully created, our API will send a `JSON` response with
     "email": "ememe@lsl.de",
     "role": "Trainee"
   }
-```
+~~~
 
 If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
 
-```
+~~~json
   {
     "errors": [
       "Login role can't be blank", 
       "Login password can't be blank"
     ]
   }
-```
+~~~
 
 ### Update
 
@@ -100,19 +101,19 @@ To update an existing login, send a `PUT` request to the logins' endpoint `/api/
 
 An example request body to update a login's name might be:
 
-```
+~~~json
   {
     login: {
       first_name: 'New name'
     }
   }
-```
+~~~
 
 #### Sample response body
 
 When the login is successfully updated, our API will send a `JSON` response with the updated login's information:
 
-```
+~~~json
   {
     "id": 2,
     "first_name": "New name",
@@ -121,17 +122,17 @@ When the login is successfully updated, our API will send a `JSON` response with
     "email": "ememe@lsl.de",
     "role": "Trainee"
   }
-```
+~~~
 
 If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
 
-```
+~~~json
   {
     "errors": [
       "First name can't be blank"
     ]
   }
-```
+~~~
 
 ### Remove
 

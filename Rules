@@ -16,6 +16,7 @@
 compile '*' do
   if item[:extension] == 'md'
     filter :kramdown
+    filter :colorize_syntax, :default_colorizer => :pygmentsrb
     layout 'default'
   elsif item[:extension] == 'css'
     # don’t filter stylesheets

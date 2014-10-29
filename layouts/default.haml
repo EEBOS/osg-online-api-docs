@@ -13,16 +13,19 @@
     %header
       %img{:src => "/img/logo.png"}
     #wrapper.cf
-      #main
-        = yield
+
       #sidebar
         %h2 API
         %ul
           %li
-            %a{:href => "/api/index.html"} Getting Started
+            %a.active{:href => "/api/index.html"} Getting Started
           %li
             %a{:href => "/api/logins/index.html"} Logins
           %li
             %a{:href => "/api/courses/index.html"} Courses
           %li
             %a{:href => "/api/inventories/index.html"} Inventories
+
+      #main
+        = yield
+

@@ -74,30 +74,17 @@
         
         <p>An example request body to assign the course with <code>id</code> 2 to users with <code>id</code> 1 and 2 will be:</p>
         
-        <p><code>
-          {
-            course_ids: [2],
-            login_ids: [1, 2]
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"course_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>&#x000A;    <span class="nt">"login_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <h4 id="sample-response-body">Sample response body</h4>
         
         <p>When the courses are successfully assigned, our API will send an empty <code>JSON</code> response <code>{ }</code>; just in case the action requires an extra payment, the response body will include the key <code>extra_payment</code> as follows:</p>
         
-        <p><code>
-          {
-            "extra_payment": '1'
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"extra_payment"</span><span class="p">:</span> <span class="err">'</span><span class="mi">1</span><span class="err">'</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
         
-        <p><code>
-          {
-            "errors": "You do not have enough units to complete this operation"
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'You</span> <span class="err">do</span> <span class="err">not</span> <span class="err">have</span> <span class="err">enough</span> <span class="err">units</span> <span class="err">to</span> <span class="err">complete</span> <span class="err">this</span> <span class="err">operation'</span>&#x000A;  <span class="p">}</span></code></pre>
       </div>
     </div>
   </body>

@@ -49,26 +49,7 @@
         
         <h4 id="sample-response-body">Sample response body</h4>
         
-        <p><code>
-          [
-            {
-              "id":123456,
-              "first_name": "Demo",
-              "last_name": "Login",
-              "username": "demo_login",
-              "email": "demo_login@learninglocin.com",
-              "role": "Global Publisher"
-            },
-            {
-              "id":123457,
-              "first_name": "Demo",
-              "last_name": "Login2",
-              "username": "demo_login2",
-              "email": "demo_login2@learninglocin.com",
-              "role": "Global Publisher"
-            }
-          ]
-        </code></p>
+        <pre><code class="language-json"><span class="p">[</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="nt">"id"</span><span class="p">:</span><span class="mi">123456</span><span class="p">,</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'Demo'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'Login'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span> <span class="err">'demo_login'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span> <span class="err">'demo_login@learninglocin.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Global</span> <span class="err">Publisher'</span>&#x000A;    <span class="p">},</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="nt">"id"</span><span class="p">:</span><span class="mi">123457</span><span class="p">,</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'Demo'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'Login</span><span class="mi">2</span><span class="err">'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span> <span class="err">'demo_login</span><span class="mi">2</span><span class="err">'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span> <span class="err">'demo_login</span><span class="mi">2</span><span class="err">@learninglocin.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Global</span> <span class="err">Publisher'</span>&#x000A;    <span class="p">}</span>&#x000A;<span class="p">]</span></code></pre>
         
         <h3 id="create">Create</h3>
         
@@ -131,45 +112,17 @@
         
         <h4 id="sample-request-body">Sample request body</h4>
         
-        <p><code>
-          {
-            login: {
-              first_name:'first',
-              last_name:'last',
-              email:'login@mail.com',
-              username:'username',
-              udf_list: ['accounting', 'service'],
-              role_string: 'Trainee',
-              password: 'abc123'
-            }
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="err">login:</span> <span class="err">{</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span><span class="err">'first'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span><span class="err">'last'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span><span class="err">'login@mail.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span><span class="err">'username'</span><span class="p">,</span>&#x000A;      <span class="nt">"udf_list"</span><span class="p">:</span> <span class="p">[</span><span class="err">'accounting'</span><span class="p">,</span> <span class="err">'service'</span><span class="p">],</span>&#x000A;      <span class="nt">"role_string"</span><span class="p">:</span> <span class="err">'Trainee'</span><span class="p">,</span>&#x000A;      <span class="nt">"password"</span><span class="p">:</span> <span class="err">'abc</span><span class="mi">123</span><span class="err">'</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="err">}</span></code></pre>
         
         <h4 id="sample-response-body-1">Sample response body</h4>
         
         <p>When the login is successfully created, our API will send a <code>JSON</code> response with the newly created login’s information:</p>
         
-        <p><code>
-          {
-            "id": 2,
-            "first_name": "first",
-            "last_name": "last",
-            "username": "username",
-            "email": "ememe@lsl.de",
-            "role": "Trainee"
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>&#x000A;    <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'first'</span><span class="p">,</span>&#x000A;    <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'last'</span><span class="p">,</span>&#x000A;    <span class="nt">"username"</span><span class="p">:</span> <span class="err">'username'</span><span class="p">,</span>&#x000A;    <span class="nt">"email"</span><span class="p">:</span> <span class="err">'ememe@lsl.de'</span><span class="p">,</span>&#x000A;    <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Trainee'</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
         
-        <p><code>
-          {
-            "errors": [
-              "Login role can't be blank", 
-              "Login password can't be blank"
-            ]
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="p">[</span>&#x000A;      <span class="err">'Login</span> <span class="err">role</span> <span class="err">can't</span> <span class="err">be</span> <span class="err">blank'</span><span class="p">,</span>&#x000A;      <span class="err">'Login</span> <span class="err">password</span> <span class="err">can't</span> <span class="err">be</span> <span class="err">blank'</span>&#x000A;    <span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <h3 id="update">Update</h3>
         
@@ -179,38 +132,17 @@
         
         <p>An example request body to update a login’s name might be:</p>
         
-        <p><code>
-          {
-            login: {
-              first_name: 'New name'
-            }
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"login"</span><span class="p">:</span> <span class="p">{</span>&#x000A;      <span class="err">first_name:</span> <span class="err">'New</span> <span class="err">name'</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <h4 id="sample-response-body-2">Sample response body</h4>
         
         <p>When the login is successfully updated, our API will send a <code>JSON</code> response with the updated login’s information:</p>
         
-        <p><code>
-          {
-            "id": 2,
-            "first_name": "New name",
-            "last_name": "last",
-            "username": "username",
-            "email": "ememe@lsl.de",
-            "role": "Trainee"
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>&#x000A;    <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'New</span> <span class="err">name'</span><span class="p">,</span>&#x000A;    <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'last'</span><span class="p">,</span>&#x000A;    <span class="nt">"username"</span><span class="p">:</span> <span class="err">'username'</span><span class="p">,</span>&#x000A;    <span class="nt">"email"</span><span class="p">:</span> <span class="err">'ememe@lsl.de'</span><span class="p">,</span>&#x000A;    <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Trainee'</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
         
-        <p><code>
-          {
-            "errors": [
-              "First name can't be blank"
-            ]
-          }
-        </code></p>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="p">[</span>&#x000A;      <span class="err">'First</span> <span class="err">name</span> <span class="err">can't</span> <span class="err">be</span> <span class="err">blank'</span>&#x000A;    <span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <h3 id="remove">Remove</h3>
         

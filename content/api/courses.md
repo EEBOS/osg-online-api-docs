@@ -14,7 +14,7 @@ To retrieve the list of courses, send a `GET` request to the base courses' endpo
 
 #### Sample response body
 
-```
+~~~json
   [
     {
       "id": 1,
@@ -29,4 +29,4 @@ To retrieve the list of courses, send a `GET` request to the base courses' endpo
       "language": French
     }
   ]
-```
+~~~

@@ -19,27 +19,27 @@ To assign units to a user, send a `POST` request to the base inventories' endpoi
 
 An example request body to assign the course with `id` 2 to users with `id` 1 and 2 will be:
 
-```
+~~~json
   {
     course_ids: [2],
     login_ids: [1, 2]
   }
-```
+~~~
 
 #### Sample response body
 
 When the courses are successfully assigned, our API will send an empty `JSON` response `{ }`; just in case the action requires an extra payment, the response body will include the key `extra_payment` as follows:
 
-```
+~~~json
   {
     "extra_payment": '1'
   }
-```
+~~~
 
 If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
 
-```
+~~~json
   {
     "errors": "You do not have enough units to complete this operation"
   }
-```
+~~~

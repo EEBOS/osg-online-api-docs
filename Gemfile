@@ -5,4 +5,5 @@ gem 'nanoc'
 gem 'haml'
 gem 'kramdown'
 gem 'pygments.rb'
+gem 'redcarpet'
 gem "nokogiri"

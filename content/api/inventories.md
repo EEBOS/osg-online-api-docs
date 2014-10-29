@@ -21,8 +21,8 @@ An example request body to assign the course with `id` 2 to users with `id` 1 an
 
 ~~~json
   {
-    course_ids: [2],
-    login_ids: [1, 2]
+    "course_ids": [2],
+    "login_ids": [1, 2]
   }
 ~~~
 
@@ -40,6 +40,6 @@ If something goes wrong, the API will respond with a `422` error code and the er
 
 ~~~json
   {
-    "errors": "You do not have enough units to complete this operation"
+    "errors": 'You do not have enough units to complete this operation'
   }
 ~~~

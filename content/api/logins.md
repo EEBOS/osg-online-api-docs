@@ -17,22 +17,22 @@ To retrieve the list of logins from your account, simply send a `GET` request to
 
 ~~~json
 [
-{
-  "id":123456,
-  "first_name": "Demo",
-  "last_name": "Login",
-  "username": "demo_login",
-  "email": "demo_login@learninglocin.com",
-  "role": "Global Publisher"
-},
-{
-  "id":123457,
-  "first_name": "Demo",
-  "last_name": "Login2",
-  "username": "demo_login2",
-  "email": "demo_login2@learninglocin.com",
-  "role": "Global Publisher"
-}
+    {
+      "id":123456,
+      "first_name": 'Demo',
+      "last_name": 'Login',
+      "username": 'demo_login',
+      "email": 'demo_login@learninglocin.com',
+      "role": 'Global Publisher'
+    },
+    {
+      "id":123457,
+      "first_name": 'Demo',
+      "last_name": 'Login2',
+      "username": 'demo_login2',
+      "email": 'demo_login2@learninglocin.com',
+      "role": 'Global Publisher'
+    }
 ]
 ~~~
 
@@ -55,13 +55,13 @@ To create a new login, send a `POST` request to the base logins' endpoint with t
 ~~~json
   {
     login: {
-      first_name:'first',
-      last_name:'last',
-      email:'login@mail.com',
-      username:'username',
-      udf_list: ['accounting', 'service'],
-      role_string: 'Trainee',
-      password: 'abc123'
+      "first_name":'first',
+      "last_name":'last',
+      "email":'login@mail.com',
+      "username":'username',
+      "udf_list": ['accounting', 'service'],
+      "role_string": 'Trainee',
+      "password": 'abc123'
     }
   }
 ~~~
@@ -73,11 +73,11 @@ When the login is successfully created, our API will send a `JSON` response with
 ~~~json
   {
     "id": 2,
-    "first_name": "first",
-    "last_name": "last",
-    "username": "username",
-    "email": "ememe@lsl.de",
-    "role": "Trainee"
+    "first_name": 'first',
+    "last_name": 'last',
+    "username": 'username',
+    "email": 'ememe@lsl.de',
+    "role": 'Trainee'
   }
 ~~~
 
@@ -86,8 +86,8 @@ If something goes wrong, the API will respond with a `422` error code and the er
 ~~~json
   {
     "errors": [
-      "Login role can't be blank", 
-      "Login password can't be blank"
+      'Login role can't be blank',
+      'Login password can't be blank'
     ]
   }
 ~~~
@@ -103,7 +103,7 @@ An example request body to update a login's name might be:
 
 ~~~json
   {
-    login: {
+    "login": {
       first_name: 'New name'
     }
   }
@@ -116,11 +116,11 @@ When the login is successfully updated, our API will send a `JSON` response with
 ~~~json
   {
     "id": 2,
-    "first_name": "New name",
-    "last_name": "last",
-    "username": "username",
-    "email": "ememe@lsl.de",
-    "role": "Trainee"
+    "first_name": 'New name',
+    "last_name": 'last',
+    "username": 'username',
+    "email": 'ememe@lsl.de',
+    "role": 'Trainee'
   }
 ~~~
 
@@ -129,7 +129,7 @@ If something goes wrong, the API will respond with a `422` error code and the er
 ~~~json
   {
     "errors": [
-      "First name can't be blank"
+      'First name can't be blank'
     ]
   }
 ~~~

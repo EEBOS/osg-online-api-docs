@@ -18,14 +18,14 @@ To retrieve the list of courses, send a `GET` request to the base courses' endpo
   [
     {
       "id": 1,
-      "name": "Aerial Lift",
-      "code": "AL",
-      "language": "English"
+      "name": 'Aerial Lift',
+      "code": 'AL',
+      "language": 'English'
     },
     {
       "id": 2,
-      "name": "AODA",
-      "code": "AODA",
+      "name": 'AODA',
+      "code": 'AODA',
       "language": French
     }
   ]

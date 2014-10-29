@@ -27,5 +27,5 @@
             = link_to_navigation 'Inventories', '/api/inventories/index.html'
 
       #main
-        = yield
+        = find_and_preserve(yield)
 

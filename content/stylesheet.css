@@ -205,12 +205,21 @@ table td {
 
 pre {
     margin: 15px 0;
+    background-color: #eee;
+    border-radius: 3px;
+    padding: 5px;
+
+}
+
+code {
+
+    font-family: Inconsolata, Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
 
 .p {font-weight: lighter;}
 .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
 .c { color: #999988; font-style: italic; }
-.err { color: #a61717; font-weight: lighter; }
+.err { color: #8bae36; font-weight: lighter; }
 .k { font-weight: lighter; }
 .o { font-weight: lighter; }
 .cm { color: #999988; font-style: italic; }

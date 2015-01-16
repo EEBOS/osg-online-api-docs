@@ -10,18 +10,18 @@ The `/api/inventories` endpoint a couple of methods to let you retrieve informat
 
 To assign units to a user, send a `POST` request to the base inventories' endpoint with the following parameters:
 
-| Name        | Type   | Required? | Description                                              |
-|-------------|--------|-----------|----------------------------------------------------------|
-| course_ids  | array  | yes       | List of course ids that will be assigned                 |
-| login_ids   | array  | yes       | List of login ids to which the courses will be assigned  |
+| Name         | Type   | Required? | Description                                              |
+|--------------|--------|-----------|----------------------------------------------------------|
+| course_codes | array  | yes       | List of course codes that will be assigned               |
+| login_ids    | array  | yes       | List of login ids to which the courses will be assigned  |
 
 #### Sample request body
 
-An example request body to assign the course with `id` 2 to users with `id` 1 and 2 will be:
+An example request body to assign the course with `code` 'JHSC' to users with `id` 1 and 2 will be:
 
 ~~~json
   {
-    "course_ids": [2],
+    "course_codes": ['JHSC'],
     "login_ids": [1, 2]
   }
 ~~~

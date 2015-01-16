@@ -43,3 +43,11 @@ If something goes wrong, the API will respond with a `422` error code and the er
     "errors": 'You do not have enough units to complete this operation'
   }
 ~~~
+
+If no courses are found for codes, the API will respond with a `422` error code and the error's description in `JSON` format:
+
+~~~json
+  {
+    "errors": 'No courses found for given codes'
+  }
+~~~

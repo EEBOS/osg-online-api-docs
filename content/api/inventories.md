@@ -4,20 +4,20 @@ title: Inventories
 
 ## Inventories
 
-The `/api/inventories` endpoint a couple of methods to let you retrieve information about your inventories and assign units to your users.
+The Inventories endpoint is used for assigning courses to users.
+
+## Methods
 
 ### Assign Units
 
-To assign units to a user, send a `POST` request to the base inventories' endpoint with the following parameters:
+To assign units to a user, send a `POST` request to the URL above with the following parameters:
 
-| Name         | Type   | Required? | Description                                              |
-|--------------|--------|-----------|----------------------------------------------------------|
-| course_codes | array  | yes       | List of course codes that will be assigned               |
-| login_ids    | array  | yes       | List of login ids to which the courses will be assigned  |
+| Name         | Type   | Required? | Description                                                   |
+|--------------|--------|-----------|---------------------------------------------------------------|
+| course_codes | array  | yes       | List of course codes that will be assigned                    |
+| login_ids    | array  | yes       | List of login ids to which selected courses will be assigned  |
 
-#### Sample request body
-
-An example request body to assign the course with `code` 'JHSC' to users with `id` 1 and 2 will be:
+#### Sample Request Body
 
 ~~~json
   {
@@ -26,9 +26,10 @@ An example request body to assign the course with `code` 'JHSC' to users with `i
   }
 ~~~
 
-#### Sample response body
+#### Sample Response Body
 
-When the courses are successfully assigned, our API will send an empty `JSON` response `{ }`; just in case the action requires an extra payment, the response body will include the key `extra_payment` as follows:
+When courses are successfully assigned, our API will send an empty `JSON` hash as a response: `{ }`
+If the assignation requires an extra payment, the response body will include the `extra_payment` key. Example:
 
 ~~~json
   {
@@ -36,18 +37,10 @@ When the courses are successfully assigned, our API will send an empty `JSON` re
   }
 ~~~
 
-If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
+If something goes wrong, the API will respond with a `HTTP 422` error code and the error’s description in the response body:
 
 ~~~json
   {
     "errors": 'You do not have enough units to complete this operation'
-  }
-~~~
-
-If no courses are found for codes, the API will respond with a `422` error code and the error's description in `JSON` format:
-
-~~~json
-  {
-    "errors": 'No courses found for given codes'
   }
 ~~~

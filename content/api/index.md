@@ -2,23 +2,34 @@
 title: API
 ---
 
-# API
 
-In order to interact with our API, you're required to include an authentication token in the header of every request; this token will be provided to you by your distributor.
+## What is the OLE LMS API?
 
-For instance, to retrieve the list of logins from your account, you can make the following request via `curl` command.
+The OLE LMS API is a complete programmable interface to all LMS functionality. All resources are exposed through RESTful URLS.
+
+
+## What can you do with it?
+
+Assigning courses, creating users, accessing reports. There are quite a number of features we support! Use the left-hand menu to navigate through all the available endpoints for more information.
+
+## How do I get started?
+
+In order to interact with our API, you’re required to include an authentication token in the header of every request. This API key will be provided to you by Online Learning Enterprises.
+
+
+For example, to retrieve the list of users under your company, you can make the following request via `curl`:
 
 ```
-curl http://learninglogin.com/api/logins -H 'Authorization: Token token="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'
+curl http://learninglogin.com/api/users -H 'Authorization: Token token="TOKENHERE"'
 ```
 
-In case you receive a `HTTP Token: Access denied.` response, there's a big chance your access token is either expired or wrong.
+If your authentication token is not correct, you will receive a “HTTP Token: Access Denied” response.
 
-All of our API endpoints' responses are in `JSON` format.
+All of our API responses are sent in `JSON`.
 
 # Services
 
 * [Logins](/api/logins/index.html)
 * [Courses](/api/courses/index.html)
 * [Inventories](/api/inventories/index.html)
-* [TrainSessions](/api/train_sessions/index.html)
+* [Train Sessions](/api/train_sessions/index.html)

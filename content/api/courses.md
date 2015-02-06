@@ -4,15 +4,19 @@ title: Courses
 
 ## Courses
 
-The `/api/courses` endpoint a couple of methods to let you retrieve information about the existing courses and assign units to your users.
+You can retrieve information about courses for assignation through this endpoint.
 
-### List
+NOTE: Courses are assigned to users through the `Inventories` endpoint, not the courses endpoint.
 
-To retrieve the list of courses, send a `GET` request to the base courses' endpoint, no extra parameters are required.
+## Methods
+
+### Index
 
 `GET https://learninglogin.com/api/courses`
 
-#### Sample response body
+To retrieve the list of courses, send a `GET` request to the URL above, no extra parameters are required.
+
+#### Sample Response Body: Success
 
 ~~~json
   [

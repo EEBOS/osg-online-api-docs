@@ -108,8 +108,8 @@ header {
 
 #main h2 {
   font-size: 25px;
-
   color:  #8bae36;
+  margin-bottom: 25px;
   text-shadow: 1px 1px #ffffff;
 }
 
@@ -212,10 +212,16 @@ pre {
 }
 
 code {
-
-    font-family: Inconsolata, Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  background-color: #D8D8D8;
+  border-radius: 2px;
+  padding: 5px;
+  font-family: Inconsolata, Monaco, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+  font-size: 12px;
 }
 
+pre code {
+  background-color: transparent;
+}
 .p {font-weight: lighter;}
 .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
 .c { color: #999988; font-style: italic; }

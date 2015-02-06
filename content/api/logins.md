@@ -5,15 +5,21 @@ title: Logins
 
 ## Logins
 
-The `/api/logins/{ login_id }` endpoint implements RESTful methods to let you interact with your data.
+A `Login` quite simply represents a user in the system. You may create a new `Login` at any time. There are two types of `Logins` that can be created:
 
-### List
+- `trainee:` Represents an employee. Only has access to the training center which they use to take courses assigned.</li>
+- `admin:` Represents an admnistrator. Can assign courses, access reports, take courses for themselves, and all the administrative features required to manage your LMS.
 
-To retrieve the list of logins from your account, simply send a `GET` request to the base logins' endpoint, no extra parameters are required.
+## Methods
+
+
+### Index
 
 `GET https://learninglogin.com/api/logins`
 
-#### Sample response body
+To retrieve the list of logins from your account, simply send a `GET` request to the URL above, no extra parameters are required.
+
+#### Sample Response Body
 
 ~~~json
 [
@@ -23,7 +29,7 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "last_name": 'Login',
       "username": 'demo_login',
       "email": 'demo_login@learninglocin.com',
-      "role": 'Global Publisher'
+      "role": 'Admin'
     },
     {
       "id":123457,
@@ -31,26 +37,28 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "last_name": 'Login2',
       "username": 'demo_login2',
       "email": 'demo_login2@learninglocin.com',
-      "role": 'Global Publisher'
+      "role": 'Trainee'
     }
 ]
 ~~~
 
 ### Create
 
-To create a new login, send a `POST` request to the base logins' endpoint with the following parameters:
+`POST https://learninglogin.com/api/logins`
 
-| Name        | Type   | Required? | Description                                        |
-|-------------|--------|-----------|----------------------------------------------------|
-| first_name  | string | yes       | Login's first name                                 |
-| last_name   | string | yes       | Login's last name                                  |
-| email       | string | yes       | Login's email address                              |
-| username    | string | yes       | Login's username, required to access the system    |
-| password    | string | yes       | Login's password                                   |
-| role_string | string | yes       | Login's role: Can be 'Trainee', 'Global publisher' |
-| udf_list    | array  | no        | List of tags associated to the login               |
+To create a new login, send a `POST` request to the URL with the following parameters:
 
-#### Sample request body
+| Name        | Type   | Required? | Description                                             |
+|-------------|--------|-----------|---------------------------------------------------------|
+| first_name  | string | yes       |                                                         |
+| last_name   | string | yes       |                                                         |
+| email       | string | yes       |                                                         |
+| username    | string | yes       |                                                         |
+| password    | string | yes       |                                                         |
+| role_string | string | yes       | Permission set for User. Can be ‘Trainee’ or ‘Admin’    |
+| udf_list    | array  | no        | List of “tag” metadata associated to user               |
+
+#### Sample Request Body
 
 ~~~json
   {
@@ -66,9 +74,9 @@ To create a new login, send a `POST` request to the base logins' endpoint with t
   }
 ~~~
 
-#### Sample response body
+#### Sample Response Body
 
-When the login is successfully created, our API will send a `JSON` response with the newly created login's information:
+When a `login` is successfully  created, our API will send a response with the newly created information:
 
 ~~~json
   {
@@ -81,7 +89,9 @@ When the login is successfully created, our API will send a `JSON` response with
   }
 ~~~
 
-If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
+Errors will be responded with a `HTTP 422` error code, and an error description.
+
+#### Sample Response Body: Failure
 
 ~~~json
   {
@@ -94,10 +104,11 @@ If something goes wrong, the API will respond with a `422` error code and the er
 
 ### Update
 
-To update an existing login, send a `PUT` request to the logins' endpoint `/api/logins/{ login_id }` with the parameters you want to update, the same [parameters used when creating a login](#create) are supported.
+To update an existing login, send a `PUT` request to the URL above with the parameters you wish to update with the same format as our #create action.
 
+You can update as many fields as you wish.
 
-#### Sample request body
+#### Sample Request Body
 
 An example request body to update a login's name might be:
 
@@ -109,9 +120,9 @@ An example request body to update a login's name might be:
   }
 ~~~
 
-#### Sample response body
+When the login is successfully updated, our API will send a response with all of the updated login’s information (including fields that were *not* updated).
 
-When the login is successfully updated, our API will send a `JSON` response with the updated login's information:
+#### Sample Response Body
 
 ~~~json
   {
@@ -124,8 +135,9 @@ When the login is successfully updated, our API will send a `JSON` response with
   }
 ~~~
 
-If something goes wrong, the API will respond with a `422` error code and the error's description in `JSON` format:
+Errors will be sent with a `HTTP 422 error code, and an error description.
 
+#### Sample Response Body: Failure
 ~~~json
   {
     "errors": [
@@ -134,11 +146,13 @@ If something goes wrong, the API will respond with a `422` error code and the er
   }
 ~~~
 
-### Remove
+### Delete
 
-To remove a login, send a `DELETE` request to the logins' endpoint `/api/logins/{ login_id }`, no parameters are required.
+`DELETE https://learninglogin.com/api/logins/:id`
 
-When the login is successfully removed, our API will send an empty `JSON` response.
+To remove a login, send a `DELETE` request to the URL above, no parameters are required.
 
-If something goes wrong, the API will respond with a `422` error code and an empty `JSON` response.
+When the login is successfully removed, our API will send an empty response.
+
+If anything goes wrong, the API will respond with a `HTTP 422` error code and an empty response.
 

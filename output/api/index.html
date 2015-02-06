@@ -33,6 +33,9 @@
           <li>
             <a href='/api/inventories/index.html'>Inventories</a>
           </li>
+          <li>
+            <a href='/api/train_sessions/index.html'>Train Sessions</a>
+          </li>
         </ul>
       </div>
       <div id='main'>
@@ -41,9 +44,9 @@
         
         <p>In order to interact with our API, you’re required to include an authentication token in the header of every request; this token will be provided to you by your distributor.</p>
         
-        <p>For instance, to retrieve the list of users from your account, you can make the following request via <code>curl</code> command.</p>
+        <p>For instance, to retrieve the list of logins from your account, you can make the following request via <code>curl</code> command.</p>
         
-        <p><code>&#x000A;curl http://learninglogin.com/api/users -H 'Authorization: Token token="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'</code></p>
+        <p><code>&#x000A;curl http://learninglogin.com/api/logins -H 'Authorization: Token token="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"'</code></p>
         
         <p>In case you receive a <code>HTTP Token: Access denied.</code> response, there’s a big chance your access token is either expired or wrong.</p>
         
@@ -55,6 +58,7 @@
           <li><a href="/api/logins/index.html">Logins</a></li>
           <li><a href="/api/courses/index.html">Courses</a></li>
           <li><a href="/api/inventories/index.html">Inventories</a></li>
+          <li><a href="/api/train_sessions/index.html">TrainSessions</a></li>
         </ul>
       </div>
     </div>

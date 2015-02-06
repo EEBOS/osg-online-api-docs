@@ -21,3 +21,4 @@ All of our API endpoints' responses are in `JSON` format.
 * [Logins](/api/logins/index.html)
 * [Courses](/api/courses/index.html)
 * [Inventories](/api/inventories/index.html)
+* [TrainSessions](/api/train_sessions/index.html)

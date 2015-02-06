@@ -33,6 +33,9 @@
           <li>
             <a href='/api/inventories/index.html' class='active'>Inventories</a>
           </li>
+          <li>
+            <a href='/api/train_sessions/index.html'>Train Sessions</a>
+          </li>
         </ul>
       </div>
       <div id='main'>
@@ -56,10 +59,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>course_ids</td>
+              <td>course_codes</td>
               <td>array</td>
               <td>yes</td>
-              <td>List of course ids that will be assigned</td>
+              <td>List of course codes that will be assigned</td>
             </tr>
             <tr>
               <td>login_ids</td>
@@ -72,9 +75,9 @@
         
         <h4 id="sample-request-body">Sample request body</h4>
         
-        <p>An example request body to assign the course with <code>id</code> 2 to users with <code>id</code> 1 and 2 will be:</p>
+        <p>An example request body to assign the course with <code>code</code> ‘JHSC’ to users with <code>id</code> 1 and 2 will be:</p>
         
-        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"course_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>&#x000A;    <span class="nt">"login_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"course_codes"</span><span class="p">:</span> <span class="p">[</span><span class="err">'JHSC'</span><span class="p">],</span>&#x000A;    <span class="nt">"login_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
         
         <h4 id="sample-response-body">Sample response body</h4>
         
@@ -85,6 +88,10 @@
         <p>If something goes wrong, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
         
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'You</span> <span class="err">do</span> <span class="err">not</span> <span class="err">have</span> <span class="err">enough</span> <span class="err">units</span> <span class="err">to</span> <span class="err">complete</span> <span class="err">this</span> <span class="err">operation'</span>&#x000A;  <span class="p">}</span></code></pre>
+        
+        <p>If no courses are found for codes, the API will respond with a <code>422</code> error code and the error’s description in <code>JSON</code> format:</p>
+        
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'No</span> <span class="err">courses</span> <span class="err">found</span> <span class="err">for</span> <span class="err">given</span> <span class="err">codes'</span>&#x000A;  <span class="p">}</span></code></pre>
       </div>
     </div>
   </body>

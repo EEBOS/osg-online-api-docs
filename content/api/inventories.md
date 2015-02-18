@@ -10,6 +10,8 @@ The Inventories endpoint is used for assigning courses to users.
 
 ### Assign Units
 
+`POST https://learninglogin.com/api/inventories/assign_units`
+
 To assign units to a user, send a `POST` request to the URL above with the following parameters:
 
 | Name         | Type   | Required? | Description                                                   |

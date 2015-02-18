@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
       <title>
-        A Brand New nanoc Site - Train Sessions
+        OLE LMS API - Train Sessions
       </title>
       <link href='/stylesheet.css' rel='stylesheet'>
       <script src='/scripts.js' type='text/javascript'></script>
@@ -42,21 +42,23 @@
         
         <h2 id="train-sessions">Train Sessions</h2>
         
-        <p>The <code>/api/train_sessions/{ train_session_id }</code> endpoint implements RESTful methods to let you interact with your data.</p>
+        <p>A <code>TrainSession</code> represents a training record in the system. Train Sessions track information such as: date of completion, score, date of assignation, percent complete, etc.</p>
         
-        <h3 id="list">List</h3>
+        <p>The <code>/api/train_sessions/</code> endpoint implements RESTful methods to let you interact with your data.</p>
         
-        <p>To retrieve the list of train sessions available for your account, simply send a <code>GET</code> request to the base endpoint, you can pass a series of filters to refine your search</p>
+        <h2 id="methods">Methods</h2>
+        
+        <h3 id="index">Index</h3>
         
         <p><code>GET https://learninglogin.com/api/train_sessions</code></p>
         
-        <h4 id="sample-response-body">Sample response body</h4>
-        
-        <pre><code class="language-json"><span class="p">[</span>&#x000A;  <span class="p">{</span><span class="nt">"id"</span><span class="err">=&gt;</span><span class="mi">3</span><span class="p">,</span>&#x000A;  <span class="nt">"score"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"percent_complete"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"failed_attempts"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"status"</span><span class="err">=&gt;</span><span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;  <span class="nt">"cert_expiry"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"completion_date"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"complete_by"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"full_name"</span><span class="err">=&gt;</span><span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;  <span class="nt">"time_spent"</span><span class="err">=&gt;nil</span><span class="p">},</span>&#x000A; <span class="p">{</span><span class="nt">"id"</span><span class="err">=&gt;</span><span class="mi">2</span><span class="p">,</span>&#x000A;  <span class="nt">"score"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"percent_complete"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"failed_attempts"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"status"</span><span class="err">=&gt;</span><span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;  <span class="nt">"cert_expiry"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"completion_date"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"complete_by"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"full_name"</span><span class="err">=&gt;</span><span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;  <span class="nt">"time_spent"</span><span class="err">=&gt;nil</span><span class="p">},</span>&#x000A; <span class="p">{</span><span class="nt">"id"</span><span class="err">=&gt;</span><span class="mi">1</span><span class="p">,</span>&#x000A;  <span class="nt">"score"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"percent_complete"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"failed_attempts"</span><span class="err">=&gt;</span><span class="mi">0</span><span class="p">,</span>&#x000A;  <span class="nt">"status"</span><span class="err">=&gt;</span><span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;  <span class="nt">"cert_expiry"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"completion_date"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"complete_by"</span><span class="err">=&gt;nil</span><span class="p">,</span>&#x000A;  <span class="nt">"full_name"</span><span class="err">=&gt;</span><span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;  <span class="nt">"time_spent"</span><span class="err">=&gt;nil</span><span class="p">}</span>&#x000A;<span class="p">]</span></code></pre>
+        <p>To retrieve the list of train sessions available for your account, simply send a <code>GET</code> request to the URL above. Optionally, you can pass a series of filters for searching purposes.</p>
         
         <h4 id="available-search-filters">Available search filters</h4>
         
-        <p>To create a new login, send a <code>POST</code> request to the base logins’ endpoint with the following parameters:</p>
+        <p>All of these parameters should be sent in as GET parameters.</p>
+        
+        <p>All date parameters should be sent in a <code>YYYY-MM-DD</code> format.</p>
         
         <table>
           <thead>
@@ -70,81 +72,81 @@
             <tr>
               <td>course_code_or_course_name_cont</td>
               <td>string</td>
-              <td>Filter by course code or course name</td>
+              <td>Filter by course code or course name.</td>
             </tr>
             <tr>
               <td>full_name_cont</td>
               <td>string</td>
-              <td>Filter by full name</td>
+              <td>Filter by full name.</td>
             </tr>
             <tr>
               <td>score_eq</td>
               <td>string</td>
-              <td>Filter by score</td>
+              <td>Filter by score.</td>
             </tr>
             <tr>
               <td>completion_date_gteq</td>
               <td>string</td>
-              <td>Filter by completion date after than provided</td>
+              <td>Filter by completion date greater or equal to the date provided.</td>
             </tr>
             <tr>
               <td>completion_date_lteq</td>
               <td>string</td>
-              <td>Filter by completion date before than provided</td>
+              <td>Filter by completion date less than or equal to the date provided.</td>
             </tr>
             <tr>
               <td>cert_expiry_gt</td>
               <td>string</td>
-              <td>Filter by certificate expiry date after</td>
+              <td>Filter by certificate expiry greater or equal to the date provided.</td>
             </tr>
             <tr>
               <td>cert_expiry_lt</td>
               <td>string</td>
-              <td>Filter by certificate expiry before than</td>
+              <td>Filter by certificate expiry less than or equal to the date provided.</td>
             </tr>
             <tr>
               <td>percent_complete_eq</td>
               <td>string</td>
-              <td>Filter by percentage of completeness</td>
+              <td>Filter by % complete.</td>
             </tr>
             <tr>
               <td>complete_by_eq</td>
               <td>string</td>
-              <td>Filter by Completed by</td>
+              <td>Filter by date of completion.</td>
             </tr>
             <tr>
               <td>last_attempt_eq</td>
               <td>string</td>
-              <td>Filter by last attempt</td>
+              <td>Filter by date of last attempt.</td>
             </tr>
             <tr>
               <td>assignee_login_username_eq</td>
               <td>string</td>
-              <td>Filter by assignee username</td>
+              <td>Filter by the assigned trainee’s username.</td>
             </tr>
             <tr>
               <td>failed_attempts_eq</td>
               <td>string</td>
-              <td>Filter by failed attempts</td>
-            </tr>
-            <tr>
-              <td>unit_unit_expiry_gt</td>
-              <td>string</td>
-              <td>Filter by unit expity after</td>
-            </tr>
-            <tr>
-              <td>unit_unit_expiry_lt</td>
-              <td>string</td>
-              <td>Filter by unit expiry before</td>
+              <td>Filter by # of failed attempts at the Final Quiz.</td>
             </tr>
           </tbody>
         </table>
         
+        <h4 id="sample-request-body">Sample Request Body</h4>
+        
+        <p><code>GET https://learninglogin.com/api/train_sessions?score=80&amp;completion_date_gteq=2015-01-01</code></p>
+        
+        <p>This request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of “80” percent.</p>
+        
+        <h4 id="sample-response-body">Sample Response Body</h4>
+        
+        <pre><code class="language-json"><span class="p">[</span>&#x000A;  <span class="p">{</span> <span class="nt">"id"</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>&#x000A;    <span class="nt">"course_code"</span><span class="p">:</span> <span class="s2">"WHMIS"</span><span class="p">,</span>&#x000A;    <span class="nt">"score"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"percent_complete"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"failed_attempts"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;    <span class="nt">"cert_expiry"</span><span class="p">:</span> <span class="s2">"2016-02-06"</span><span class="p">,</span>&#x000A;    <span class="nt">"completion_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"complete_by"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;    <span class="nt">"time_spent"</span><span class="p">:</span> <span class="s2">"0.0"</span> <span class="p">},</span>&#x000A;&#x000A;  <span class="p">{</span> <span class="nt">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>&#x000A;    <span class="nt">"course_code"</span><span class="p">:</span> <span class="s2">"TDG"</span><span class="p">,</span>&#x000A;    <span class="nt">"score"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"percent_complete"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"failed_attempts"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;    <span class="nt">"cert_expiry"</span><span class="p">:</span> <span class="s2">"2016-02-06"</span><span class="p">,</span>&#x000A;    <span class="nt">"completion_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"complete_by"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;    <span class="nt">"time_spent"</span><span class="p">:</span> <span class="s2">"0.0"</span> <span class="p">},</span>&#x000A;    &#x000A;  <span class="p">{</span> <span class="nt">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>&#x000A;    <span class="nt">"course_code"</span><span class="p">:</span> <span class="s2">"FP"</span><span class="p">,</span>&#x000A;    <span class="nt">"score"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"percent_complete"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"failed_attempts"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>&#x000A;    <span class="nt">"status"</span><span class="p">:</span> <span class="s2">"Assigned"</span><span class="p">,</span>&#x000A;    <span class="nt">"cert_expiry"</span><span class="p">:</span> <span class="s2">"2016-02-06"</span><span class="p">,</span>&#x000A;    <span class="nt">"completion_date"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"complete_by"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>&#x000A;    <span class="nt">"full_name"</span><span class="p">:</span> <span class="s2">"Michelle Dragsta"</span><span class="p">,</span>&#x000A;    <span class="nt">"time_spent"</span><span class="p">:</span> <span class="s2">"0.0"</span> <span class="p">}</span>&#x000A;<span class="p">]</span></code></pre>
+        
         <h3 id="show">Show</h3>
         
-        <p>To retrieve a specific train session send a <code>GET</code> request to:</p>
+        <p>To retrieve a particular train session send a <code>GET</code> request to:</p>
         
-        <p><code>GET https://learninglogin.com/api/train_sessions/train_session_id</code></p>
+        <p><code>GET https://learninglogin.com/api/train_sessions/:id</code></p>
       </div>
     </div>
   </body>

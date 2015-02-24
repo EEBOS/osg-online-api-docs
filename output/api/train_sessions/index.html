@@ -147,6 +147,47 @@
         <p>To retrieve a particular train session send a <code>GET</code> request to:</p>
         
         <p><code>GET https://learninglogin.com/api/train_sessions/:id</code></p>
+        
+        <h3 id="course-player">Course Player</h3>
+        
+        <p>To actually consume a train session through the course player, visit the url:</p>
+        
+        <p><code>http://learninglogin.com/api/train_sessions/:user_id/:course_code?token=:token</code></p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Required?</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>user_id</td>
+              <td>integer</td>
+              <td>yes</td>
+              <td>Id of user consuming the train session</td>
+            </tr>
+            <tr>
+              <td>course_code</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Unique code which identifies the course, i.e. WHMIS</td>
+            </tr>
+            <tr>
+              <td>token</td>
+              <td>string</td>
+              <td>yes</td>
+              <td>Authentication token. If wrong, you will receive a ‘Authentication error’ message</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p>If you want to embed the course player into your site, just insert an <code>iframe</code> with the url above in the <code>src</code> property:</p>
+        
+        <pre><code class="language-html">  <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"http://learninglogin.com/api/train_sessions/1/WHMIS?token=TOKENHERE"</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre>
       </div>
     </div>
   </body>

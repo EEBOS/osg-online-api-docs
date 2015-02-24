@@ -97,3 +97,21 @@ To retrieve a particular train session send a `GET` request to:
 
 `GET https://learninglogin.com/api/train_sessions/:id`
 
+### Course Player
+
+To actually consume a train session through the course player, visit the url:
+
+`http://learninglogin.com/api/train_sessions/:user_id/:course_code?token=:token`
+
+| Name        | Type    | Required? | Description                                                                       |
+|-------------|---------|-----------|-----------------------------------------------------------------------------------|
+| user_id     | integer | yes       | Id of user consuming the train session                                            |
+| course_code | string  | yes       | Unique code which identifies the course, i.e. WHMIS                               |
+| token       | string  | yes       | Authentication token. If wrong, you will receive a 'Authentication error' message |
+
+If you want to embed the course player into your site, just insert an `iframe` with the url above in the `src` property:
+
+~~~html
+  <iframe src="http://learninglogin.com/api/train_sessions/1/WHMIS?token=TOKENHERE"> </iframe>
+~~~
+

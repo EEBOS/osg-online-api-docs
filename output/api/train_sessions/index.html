@@ -152,7 +152,7 @@
         
         <p>To actually consume a train session through the course player, visit the url:</p>
         
-        <p><code>http://learninglogin.com/api/train_sessions/:user_id/:course_code?token=:token</code></p>
+        <p><code>http://learninglogin.com/api/train_sessions/:login_id/:course_code?token=:token</code></p>
         
         <table>
           <thead>
@@ -165,10 +165,10 @@
           </thead>
           <tbody>
             <tr>
-              <td>user_id</td>
+              <td>login_id</td>
               <td>integer</td>
               <td>yes</td>
-              <td>Id of user consuming the train session</td>
+              <td>Id of login consuming the train session</td>
             </tr>
             <tr>
               <td>course_code</td>

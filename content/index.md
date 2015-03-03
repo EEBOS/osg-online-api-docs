@@ -33,3 +33,4 @@ All of our API responses are sent in `JSON`.
 * [Courses](/api/courses/index.html)
 * [Inventories](/api/inventories/index.html)
 * [Train Sessions](/api/train_sessions/index.html)
+* [LMS Access](/api/lms_access/index.html)

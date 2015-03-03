@@ -42,6 +42,25 @@ To retrieve the list of logins from your account, simply send a `GET` request to
 ]
 ~~~
 
+### Show
+
+`GET https://learninglogin.com/api/logins/:id`
+
+To retrieve the details of a particular login from your account, send a `GET` request to the URL above, no parameters are required.
+
+#### Sample Response Body
+
+~~~json
+  {
+    "id":123456,
+    "first_name": 'Demo',
+    "last_name": 'Login',
+    "username": 'demo_login',
+    "email": 'demo_login@learninglocin.com',
+    "role": 'Admin'
+  }
+~~~
+
 ### Create
 
 `POST https://learninglogin.com/api/logins`
@@ -103,6 +122,8 @@ Errors will be responded with a `HTTP 422` error code, and an error description.
 ~~~
 
 ### Update
+
+`PUT https://learninglogin.com/api/logins/:id`
 
 To update an existing login, send a `PUT` request to the URL above with the parameters you wish to update with the same format as our #create action.
 

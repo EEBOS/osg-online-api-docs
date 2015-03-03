@@ -66,6 +66,16 @@
         
         <pre><code class="language-json"><span class="p">[</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="nt">"id"</span><span class="p">:</span><span class="mi">123456</span><span class="p">,</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'Demo'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'Login'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span> <span class="err">'demo_login'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span> <span class="err">'demo_login@learninglocin.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Admin'</span>&#x000A;    <span class="p">},</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="nt">"id"</span><span class="p">:</span><span class="mi">123457</span><span class="p">,</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'Demo'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'Login</span><span class="mi">2</span><span class="err">'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span> <span class="err">'demo_login</span><span class="mi">2</span><span class="err">'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span> <span class="err">'demo_login</span><span class="mi">2</span><span class="err">@learninglocin.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Trainee'</span>&#x000A;    <span class="p">}</span>&#x000A;<span class="p">]</span></code></pre>
         
+        <h3 id="show">Show</h3>
+        
+        <p><code>GET https://learninglogin.com/api/logins/:id</code></p>
+        
+        <p>To retrieve the details of a particular login from your account, send a <code>GET</code> request to the URL above, no parameters are required.</p>
+        
+        <h4 id="sample-response-body-1">Sample Response Body</h4>
+        
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"id"</span><span class="p">:</span><span class="mi">123456</span><span class="p">,</span>&#x000A;    <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'Demo'</span><span class="p">,</span>&#x000A;    <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'Login'</span><span class="p">,</span>&#x000A;    <span class="nt">"username"</span><span class="p">:</span> <span class="err">'demo_login'</span><span class="p">,</span>&#x000A;    <span class="nt">"email"</span><span class="p">:</span> <span class="err">'demo_login@learninglocin.com'</span><span class="p">,</span>&#x000A;    <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Admin'</span>&#x000A;  <span class="p">}</span></code></pre>
+        
         <h3 id="create">Create</h3>
         
         <p><code>POST https://learninglogin.com/api/logins</code></p>
@@ -131,7 +141,7 @@
         
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="err">login:</span> <span class="err">{</span>&#x000A;      <span class="nt">"first_name"</span><span class="p">:</span><span class="err">'first'</span><span class="p">,</span>&#x000A;      <span class="nt">"last_name"</span><span class="p">:</span><span class="err">'last'</span><span class="p">,</span>&#x000A;      <span class="nt">"email"</span><span class="p">:</span><span class="err">'login@mail.com'</span><span class="p">,</span>&#x000A;      <span class="nt">"username"</span><span class="p">:</span><span class="err">'username'</span><span class="p">,</span>&#x000A;      <span class="nt">"udf_list"</span><span class="p">:</span> <span class="p">[</span><span class="err">'accounting'</span><span class="p">,</span> <span class="err">'service'</span><span class="p">],</span>&#x000A;      <span class="nt">"role_string"</span><span class="p">:</span> <span class="err">'Trainee'</span><span class="p">,</span>&#x000A;      <span class="nt">"password"</span><span class="p">:</span> <span class="err">'abc</span><span class="mi">123</span><span class="err">'</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="err">}</span></code></pre>
         
-        <h4 id="sample-response-body-1">Sample Response Body</h4>
+        <h4 id="sample-response-body-2">Sample Response Body</h4>
         
         <p>When a <code>login</code> is successfully  created, our API will send a response with the newly created information:</p>
         
@@ -145,6 +155,8 @@
         
         <h3 id="update">Update</h3>
         
+        <p><code>PUT https://learninglogin.com/api/logins/:id</code></p>
+        
         <p>To update an existing login, send a <code>PUT</code> request to the URL above with the parameters you wish to update with the same format as our #create action.</p>
         
         <p>You can update as many fields as you wish.</p>
@@ -157,7 +169,7 @@
         
         <p>When the login is successfully updated, our API will send a response with all of the updated login’s information (including fields that were <em>not</em> updated).</p>
         
-        <h4 id="sample-response-body-2">Sample Response Body</h4>
+        <h4 id="sample-response-body-3">Sample Response Body</h4>
         
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>&#x000A;    <span class="nt">"first_name"</span><span class="p">:</span> <span class="err">'New</span> <span class="err">name'</span><span class="p">,</span>&#x000A;    <span class="nt">"last_name"</span><span class="p">:</span> <span class="err">'last'</span><span class="p">,</span>&#x000A;    <span class="nt">"username"</span><span class="p">:</span> <span class="err">'username'</span><span class="p">,</span>&#x000A;    <span class="nt">"email"</span><span class="p">:</span> <span class="err">'ememe@lsl.de'</span><span class="p">,</span>&#x000A;    <span class="nt">"role"</span><span class="p">:</span> <span class="err">'Trainee'</span>&#x000A;  <span class="p">}</span></code></pre>
         

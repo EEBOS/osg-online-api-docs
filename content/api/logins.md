@@ -81,7 +81,7 @@ To create a new login, send a `POST` request to the URL with the following param
 
 ~~~json
   {
-    login: {
+    "login": {
       "first_name":'first',
       "last_name":'last',
       "email":'login@mail.com',
@@ -136,7 +136,7 @@ An example request body to update a login's name might be:
 ~~~json
   {
     "login": {
-      first_name: 'New name'
+      "first_name": 'New name'
     }
   }
 ~~~

@@ -151,6 +151,52 @@
         
         <p><code>GET https://learninglogin.com/api/train_sessions/:id</code></p>
         
+        <h3 id="unassign">Unassign</h3>
+        
+        <p><code>POST https://learninglogin.com/api/train_sessions/unassign</code></p>
+        
+        <p>To remove one or more train sessions, send a <code>POST</code> request to the url above with the following parameters:</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Required?</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>course_codes</td>
+              <td>array</td>
+              <td>yes</td>
+              <td>List of course codes that will be assigned</td>
+            </tr>
+            <tr>
+              <td>login_id</td>
+              <td>integer</td>
+              <td>yes</td>
+              <td>ID of user whose courses will be removed.</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <p>The unassign endpoint allows you to unassign multiple courses for a single user. There is currently no way to unassign multiple courses for multiple users in a single call.</p>
+        
+        <h4 id="sample-request-body-1">Sample Request Body</h4>
+        
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"course_codes"</span><span class="p">:</span> <span class="p">[</span><span class="err">'JHSC'</span><span class="p">],</span>&#x000A;    <span class="nt">"login_id"</span><span class="p">:</span> <span class="mi">1</span>&#x000A;  <span class="p">}</span></code></pre>
+        
+        <h4 id="sample-response-body-success">Sample Response Body: Success</h4>
+        
+        <p>When one or more <code>train_sessions</code> are successfully destroyed, our API will send an <code>HTTP 200</code> response with an empty body.</p>
+        
+        <h4 id="sample-response-body-failure">Sample Response Body: Failure</h4>
+        <p>If <em>none</em> of the specified courses are found for the login sent, the API will respond with an <code>HTTP 200</code> response with the following message:</p>
+        
+        <pre><code>Could not find any corresponding train sessions.&#x000A;</code></pre>
+        
         <h3 id="course-player">Course Player</h3>
         
         <p>To actually consume a train session through the course player, visit the url:</p>

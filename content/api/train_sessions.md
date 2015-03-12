@@ -97,6 +97,47 @@ To retrieve a particular train session send a `GET` request to:
 
 `GET https://learninglogin.com/api/train_sessions/:id`
 
+
+
+### Unassign
+
+`POST https://learninglogin.com/api/train_sessions/unassign`
+
+To remove one or more train sessions, send a `POST` request to the url above with the following parameters:
+
+
+| Name         | Type   | Required? | Description                                                   |
+|--------------|--------|-----------|---------------------------------------------------------------|
+| course_codes | array  | yes       | List of course codes that will be assigned                    |
+| login_id     | integer  | yes     | ID of user whose courses will be removed.                     |
+
+The unassign endpoint allows you to unassign multiple courses for a single user. There is currently no way to unassign multiple courses for multiple users in a single call.
+
+#### Sample Request Body
+
+~~~json
+  {
+    "course_codes": ['JHSC'],
+    "login_id": 1
+  }
+~~~
+
+
+#### Sample Response Body: Success
+
+When one or more `train_sessions` are successfully destroyed, our API will send an `HTTP 200` response with an empty body.
+
+
+#### Sample Response Body: Failure
+If *none* of the specified courses are found for the login sent, the API will respond with an `HTTP 200` response with the following message:
+
+~~~
+Could not find any corresponding train sessions.
+~~~
+
+
+
+
 ### Course Player
 
 To actually consume a train session through the course player, visit the url:

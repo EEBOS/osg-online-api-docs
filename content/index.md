@@ -25,7 +25,7 @@ curl http://learninglogin.com/api/logins -H 'Authorization: Token token="TOKENHE
 
 If your authentication token is not correct, you will receive a “HTTP Token: Access Denied” response.
 
-All of our API responses are sent in `JSON`.
+All of our API responses are sent in `JSON` or `XML` depending on request format.
 
 # Services
 

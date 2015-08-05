@@ -16,7 +16,7 @@ NOTE: Courses are assigned to users through the `Inventories` endpoint, not the 
 
 To retrieve the list of courses, send a `GET` request to the URL above, no extra parameters are required.
 
-#### Sample Response Body: Success
+#### Sample JSON Response Body: Success
 
 ~~~json
   [
@@ -33,4 +33,24 @@ To retrieve the list of courses, send a `GET` request to the URL above, no extra
       "language": French
     }
   ]
+~~~
+
+#### Sample XML Response Body: Success
+
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <courses type="array">
+     <course>
+        <id type="integer">2</id>
+        <name>Transport</name>
+        <code>TCD</code>
+        <language>English</language>
+     </course>
+     <course>
+        <id type="integer">1</id>
+        <name>WHM</name>
+        <code>WH1</code>
+        <language>French</language>
+     </course>
+  </courses>
 ~~~

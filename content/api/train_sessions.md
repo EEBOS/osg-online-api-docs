@@ -5,11 +5,9 @@ title: Train Sessions
 
 ## Train Sessions
 
-
 A `TrainSession` represents a training record in the system. Train Sessions track information such as: date of completion, score, date of assignation, percent complete, etc.
 
 The `/api/train_sessions/` endpoint implements RESTful methods to let you interact with your data.
-
 
 ## Methods
 
@@ -17,8 +15,7 @@ The `/api/train_sessions/` endpoint implements RESTful methods to let you intera
 
 `GET https://learninglogin.com/api/train_sessions`
 
-To retrieve the list of train sessions available for your account, simply send a `GET` request to the URL above. Optionally, you can pass a series of filters for searching purposes.
-
+To retrieve the list of train sessions available for your account, simply send a `GET` request to the URL above. Optionally, you can pass a series of filters for searching purposes. To retrieve an XML response add sufix ".xml" to the request `GET https://learninglogin.com/api/train_sessions.xml`
 
 #### Available search filters
 
@@ -44,12 +41,24 @@ All date parameters should be sent in a `YYYY-MM-DD` format.
 
 #### Sample Request Body
 
-`GET https://learninglogin.com/api/train_sessions?score=80&completion_date_gteq=2015-01-01`
+`GET https://learninglogin.com/api/train_sessions?score_eq=80&completion_date_gteq=2015-01-01`
 
 This request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent.
 
+#### Sample XML Request Body
 
-#### Sample Response Body
+`GET https://learninglogin.com/api/train_sessions.xml`
+
+To apply filters via xml they should be sent to above URL using a tag for each filter or as parameters like sample described above.
+
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <course-code-or-course-name-cont>
+    special
+  </course-code-or-course-name-cont>
+~~~
+
+#### Sample JSON Response Body
 
 ~~~json
 [
@@ -91,13 +100,78 @@ This request would fetch all training sessions completed from Jan 1st 2015 onwar
 ]
 ~~~
 
+#### Sample XML Response Body
+
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <train-sessions type="array">
+     <train-session>
+        <id type="integer">3</id>
+        <score type="integer">0</score>
+        <percent-complete type="integer">0</percent-complete>
+        <failed-attempts type="integer">0</failed-attempts>
+        <status>Assigned</status>
+        <cert-expiry type="date">2016-08-04</cert-expiry>
+        <completion-date nil="true" />
+        <complete-by nil="true" />
+        <full-name>Full Name 1</full-name>
+        <time-spent type="decimal">0.0</time-spent>
+        <course-code>WH1</course-code>
+     </train-session>
+     <train-session>
+        <id type="integer">2</id>
+        <score type="integer">0</score>
+        <percent-complete type="integer">0</percent-complete>
+        <failed-attempts type="integer">0</failed-attempts>
+        <status>Assigned</status>
+        <cert-expiry type="date">2016-08-04</cert-expiry>
+        <completion-date nil="true" />
+        <complete-by nil="true" />
+        <full-name>Full Name 1</full-name>
+        <time-spent type="decimal">0.0</time-spent>
+        <course-code>WH1</course-code>
+     </train-session>
+     <train-session>
+        <id type="integer">1</id>
+        <score type="integer">0</score>
+        <percent-complete type="integer">0</percent-complete>
+        <failed-attempts type="integer">0</failed-attempts>
+        <status>Assigned</status>
+        <cert-expiry type="date">2016-08-04</cert-expiry>
+        <completion-date nil="true" />
+        <complete-by nil="true" />
+        <full-name>Full Name 1</full-name>
+        <time-spent type="decimal">0.0</time-spent>
+        <course-code>WH1</course-code>
+     </train-session>
+  </train-sessions>
+~~~
+
+
 ### Show
 
 To retrieve a particular train session send a `GET` request to:
 
 `GET https://learninglogin.com/api/train_sessions/:id`
 
+#### Sample XML Response Body
 
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <train-session>
+     <id type="integer">1</id>
+     <score type="integer">0</score>
+     <percent-complete type="integer">0</percent-complete>
+     <failed-attempts type="integer">0</failed-attempts>
+     <status>Assigned</status>
+     <cert-expiry type="date">2016-08-04</cert-expiry>
+     <completion-date nil="true" />
+     <complete-by nil="true" />
+     <full-name>Full Name</full-name>
+     <time-spent type="decimal">0.0</time-spent>
+     <course-code>WH</course-code>
+  </train-session>
+~~~
 
 ### Unassign
 
@@ -113,7 +187,7 @@ To remove one or more train sessions, send a `POST` request to the url above wit
 
 The unassign endpoint allows you to unassign multiple courses for a single user. There is currently no way to unassign multiple courses for multiple users in a single call.
 
-#### Sample Request Body
+#### Sample JSON Request Body
 
 ~~~json
   {
@@ -121,6 +195,16 @@ The unassign endpoint allows you to unassign multiple courses for a single user.
     "login_id": 1
   }
 ~~~
+
+#### Sample XML Request Body
+~~~xml
+  <?xml version='1.0' encoding='UTF-8'?>
+  <login-id type='integer'>3</login-id>
+  <course-codes type='array'>
+    <course-code>WH1</course-code> 
+  </course-codes>
+~~~
+####
 
 
 #### Sample Response Body: Success
@@ -134,9 +218,6 @@ If *none* of the specified courses are found for the login sent, the API will re
 ~~~
 Could not find any corresponding train sessions.
 ~~~
-
-
-
 
 ### Course Player
 

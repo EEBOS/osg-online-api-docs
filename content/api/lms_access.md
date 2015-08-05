@@ -17,6 +17,14 @@ It is possible for your users to access our fully-featured LMS using their API c
   |----------|--------|-----------|---------------------------------------------|
   | username | string | yes       |                                             |            |
   | token    | string | yes       | Login token provided when login is created  |
+  
+#### Sample XML Request
+
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <username>ole_direct</username>
+  <token>6300d0cfd5c682dd25838aa23e122d36</token>
+~~~
 
 2.
   Use the token to access the LMS
@@ -33,3 +41,11 @@ It is possible for your users to access our fully-featured LMS using their API c
 After step 2 is completed, you will be **redirected** to `https://learninglogin.com/en/inventories`
 
 Once you access the LMS with your token, it **cannot be reused**. If your session is closed or expired, you will need to repeat this process in order to regain access to our LMS.
+
+#### Sample XML Request
+
+~~~xml
+  <?xml version="1.0" encoding="UTF-8"?>
+  <username>user_name</username>
+  <token>10e6eacc77745658934b14718cb1210</token>
+~~~

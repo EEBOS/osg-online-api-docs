@@ -49,19 +49,19 @@
         
         <h2 id="what-can-you-do-with-it">What can you do with it?</h2>
         
-        <p>Assigning courses, creating users, accessing reports. There are quite a number of features we support! Use the left-hand menu to navigate through all the available endpoints for more information.</p>
+        <p>Assigning courses, creating logins, accessing reports. There are quite a number of features we support! Use the left-hand menu to navigate through all the available endpoints for more information.</p>
         
         <h2 id="how-do-i-get-started">How do I get started?</h2>
         
         <p>In order to interact with our API, you’re required to include an authentication token in the header of every request. This API key will be provided to you by Online Learning Enterprises.</p>
         
-        <p>For example, to retrieve the list of users under your company, you can make the following request via <code>curl</code>:</p>
+        <p>For example, to retrieve the list of logins under your company, you can make the following request via <code>curl</code>:</p>
         
-        <p><code>&#x000A;curl http://learninglogin.com/api/users -H 'Authorization: Token token="TOKENHERE"'</code></p>
+        <p><code>&#x000A;curl http://learninglogin.com/api/logins -H 'Authorization: Token token="TOKENHERE"'</code></p>
         
         <p>If your authentication token is not correct, you will receive a “HTTP Token: Access Denied” response.</p>
         
-        <p>All of our API responses are sent in <code>JSON</code>.</p>
+        <p>All of our API responses are sent in <code>JSON</code> or <code>XML</code> depending on request format.</p>
         
         <h1 id="services">Services</h1>
         

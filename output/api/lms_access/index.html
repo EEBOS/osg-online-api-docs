@@ -82,9 +82,11 @@
           </tbody>
         </table>
         
-        <h4 id="sample-xml-request">Sample XML Request</h4>
+        <h4 id="xml-sample-request">XML Sample Request</h4>
         
-        <pre><code class="language-xml">  <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;  <span class="nt">&lt;username&gt;</span>ole_direct<span class="nt">&lt;/username&gt;</span>&#x000A;  <span class="nt">&lt;token&gt;</span>6300d0cfd5c682dd25838aa23e122d36<span class="nt">&lt;/token&gt;</span></code></pre>
+        <p><code>POST https://learninglogin.com/api/logins/request_token.xml</code></p>
+        
+        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;username&gt;</span>user_name<span class="nt">&lt;/username&gt;</span>&#x000A;  <span class="nt">&lt;token&gt;</span>6300d0cfd5c682dd25838aa23e122d36<span class="nt">&lt;/token&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
         
         <p>2.
           Use the token to access the LMS</p>
@@ -123,9 +125,11 @@
         
         <p>Once you access the LMS with your token, it <strong>cannot be reused</strong>. If your session is closed or expired, you will need to repeat this process in order to regain access to our LMS.</p>
         
-        <h4 id="sample-xml-request-1">Sample XML Request</h4>
+        <h4 id="xml-sample-request-1">XML Sample Request</h4>
         
-        <pre><code class="language-xml">  <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;  <span class="nt">&lt;username&gt;</span>user_name<span class="nt">&lt;/username&gt;</span>&#x000A;  <span class="nt">&lt;token&gt;</span>10e6eacc77745658934b14718cb1210<span class="nt">&lt;/token&gt;</span></code></pre>
+        <p><code>GET https://learninglogin.com/api/logins/authenticate.xml</code></p>
+        
+        <pre><code class="language-xml">  <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;  <span class="nt">&lt;content&gt;</span>&#x000A;    <span class="nt">&lt;username&gt;</span>user_name<span class="nt">&lt;/username&gt;</span>&#x000A;    <span class="nt">&lt;token&gt;</span>10e6eacc77745658934b14718cb1210<span class="nt">&lt;/token&gt;</span>&#x000A;  <span class="nt">&lt;/content&gt;</span></code></pre>
       </div>
     </div>
   </body>

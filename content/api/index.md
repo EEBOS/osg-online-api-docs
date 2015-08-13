@@ -27,6 +27,8 @@ If your authentication token is not correct, you will receive a “HTTP Token: A
 
 All of our API responses are sent in `JSON` or `XML` depending on request format.
 
+NOTE: Remember to send header request format as `application/xml` and add sufix .xml for XML requests.
+
 # Services
 
 * [Logins](/api/logins/index.html)

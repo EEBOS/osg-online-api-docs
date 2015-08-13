@@ -107,7 +107,11 @@
         
         <p>If something goes wrong, the API will respond with a <code>HTTP 422</code> error code and the error’s description in the response body:</p>
         
+        <h4 id="json-sample-response-body-failure">JSON Sample Response Body: Failure</h4>
+        
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'You</span> <span class="err">do</span> <span class="err">not</span> <span class="err">have</span> <span class="err">enough</span> <span class="err">units</span> <span class="err">to</span> <span class="err">complete</span> <span class="err">this</span> <span class="err">operation'</span>&#x000A;  <span class="p">}</span></code></pre>
+        
+        <h4 id="xml-sample-response-body-failure">XML Sample Response Body: Failure</h4>
         
         <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;errors&gt;</span>&#x000A;   <span class="nt">&lt;error&gt;</span>No courses found for given codes<span class="nt">&lt;/error&gt;</span>&#x000A;<span class="nt">&lt;/errors&gt;</span></code></pre>
       </div>

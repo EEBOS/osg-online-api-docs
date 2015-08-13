@@ -151,14 +151,19 @@ To create a new login, send a `POST` request to the URL above, it must contain t
 
 The XML data should be sent within a tag `<login>`.
 
-~~~json
+Note: To send udfs list, add `type="array"` to the tag `<udf-list>` and make a list of tags `<udf>` with the names like in the example below. 
+
+~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
    <first-name>First Name</first-name>
    <last-name>Last Name</last-name>
    <email>demo_login@demo.com</email>
    <username>user_name</username>
-   <udf-list type="array" />
+   <udf-list type="array">
+     <udf>udf_name</udf>
+     <udf>udf_name2</udf>
+   </udf-list>
    <role-string>Admin</role-string>
    <password>abc123</password>
 </login>
@@ -182,7 +187,7 @@ When a `login` is successfully  created, our API will send a response with the n
 
 #### XML Sample Response Body
 
-~~~json
+~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
    <id type="integer">2</id>
@@ -273,20 +278,12 @@ When the login is successfully updated, our API will send a response with all of
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
-   <account-id type="integer">1</account-id>
-   <authorization-token nil="true" />
-   <commission type="decimal" nil="true" />
-   <created-at type="datetime">2015-08-04T11:07:21-04:00</created-at>
-   <creator-id type="integer" nil="true" />
-   <email>mdragsta@ole.ca</email>
+   <id>2</id>
    <first-name>First Name</first-name>
-   <full-name>First Name Last Name</full-name>
-   <id type="integer">1</id>
    <last-name>Last Name</last-name>
-   <primary-admin type="boolean">true</primary-admin>
-   <role-id type="integer">2</role-id>
-   <updated-at type="datetime">2015-08-04T11:07:23-04:00</updated-at>
    <username>user_name</username>
+   <email>someemail@email.com</email>
+   <role>2</role>
 </login>
 ~~~
 

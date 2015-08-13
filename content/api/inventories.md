@@ -72,11 +72,15 @@ If the assignation requires an extra payment, the response body will include the
 
 If something goes wrong, the API will respond with a `HTTP 422` error code and the error’s description in the response body:
 
+#### JSON Sample Response Body: Failure
+
 ~~~json
   {
     "errors": 'You do not have enough units to complete this operation'
   }
 ~~~
+
+#### XML Sample Response Body: Failure
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>

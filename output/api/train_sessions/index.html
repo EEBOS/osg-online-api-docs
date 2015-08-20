@@ -143,11 +143,9 @@
         
         <h4 id="xml-sample-request">XML Sample Request</h4>
         
-        <p><code>GET https://learninglogin.com/api/train_sessions.xml</code></p>
+        <p><code>GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&amp;completion_date_gteq=2015-01-01</code></p>
         
-        <p>To apply filters via xml send them to above URL using a tag for each filter and inside a parent tag <code>&lt;content&gt;</code>, pagination is also available trough <code>&lt;page&gt;</code> tag in batches of 100 train sessions.</p>
-        
-        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;filters&gt;</span>&#x000A;    <span class="nt">&lt;course-code-or-course-name-cont&gt;</span>special<span class="nt">&lt;/course-code-or-course-name-cont&gt;</span>&#x000A;    <span class="nt">&lt;percent-complete-eq&gt;</span>80<span class="nt">&lt;/percent-complete-eq&gt;</span>&#x000A;  <span class="nt">&lt;/filters&gt;</span>&#x000A;  <span class="nt">&lt;page&gt;</span>1<span class="nt">&lt;/page&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
+        <p>Via XML, filters should be sent through the URI string too.</p>
         
         <h4 id="json-sample-response-body">JSON Sample Response Body</h4>
         

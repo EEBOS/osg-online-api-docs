@@ -46,20 +46,9 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
 
 #### XML Sample Request
 
-`GET https://learninglogin.com/api/train_sessions.xml`
+`GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&completion_date_gteq=2015-01-01`
 
-To apply filters via xml send them to above URL using a tag for each filter and inside a parent tag `<content>`, pagination is also available trough `<page>` tag in batches of 100 train sessions.
-
-~~~xml
-<?xml version="1.0" encoding="UTF-8"?>
-<content>
-  <filters>
-    <course-code-or-course-name-cont>special</course-code-or-course-name-cont>
-    <percent-complete-eq>80</percent-complete-eq>
-  </filters>
-  <page>1</page>
-</content>
-~~~
+Via XML, filters should be sent through the URI string too.
 
 ####  JSON Sample Response Body
 

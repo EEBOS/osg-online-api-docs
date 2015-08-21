@@ -33,7 +33,7 @@ It is possible for your users to access our fully-featured LMS using their API c
 2.
   Use the token to access the LMS
 
-  `GET https://learninglogin.com/api/logins/authenticate`
+  `GET https://learninglogin.com/api/logins/authenticate?username=user_name&token=10e6eacc77745658934b14718cb1210`
 
   Send a `GET` request to the URL above with the following parameters:
 
@@ -48,12 +48,6 @@ Once you access the LMS with your token, it **cannot be reused**. If your sessio
 
 #### XML Sample Request
 
- `GET https://learninglogin.com/api/logins/authenticate.xml`
+ `GET https://learninglogin.com/api/logins/authenticate.xml?username=user_name&token=10e6eacc77745658934b14718cb1210`
 
-~~~xml
-  <?xml version="1.0" encoding="UTF-8"?>
-  <content>
-    <username>user_name</username>
-    <token>10e6eacc77745658934b14718cb1210</token>
-  </content>
-~~~
+Parameters should be sent like the URL above just like in a JSON call

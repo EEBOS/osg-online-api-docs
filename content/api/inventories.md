@@ -30,6 +30,27 @@ To assign units to a user, send a `POST` request to the URL above with the follo
   }
 ~~~
 
+#### JSON Sample Response Body
+
+When courses are successfully assigned, our API will send an empty `JSON` hash as a response: `{ }`
+If the assignation requires an extra payment, the response body will include the `extra_payment` key. Example:
+
+~~~json
+  {
+    "extra_payment": '1'
+  }
+~~~
+
+#### JSON Sample Response Body: Failure
+
+If something goes wrong, the API will respond with a `HTTP 422` error code and the error’s description in the response body:
+
+~~~json
+  {
+    "errors": 'You do not have enough units to complete this operation'
+  }
+~~~
+
 #### XML Sample Request Body
 
 `POST https://learninglogin.com/api/inventories/assign_units.xml`
@@ -46,18 +67,7 @@ Note: It is important to mantain the "type" of the parameter in the tag for the 
   <login-ids type="array">
      <login-id type="integer">1</login-id>
   </login-ids>
-<content>
-~~~
-
-#### JSON Sample Response Body
-
-When courses are successfully assigned, our API will send an empty `JSON` hash as a response: `{ }`
-If the assignation requires an extra payment, the response body will include the `extra_payment` key. Example:
-
-~~~json
-  {
-    "extra_payment": '1'
-  }
+</content>
 ~~~
 
 #### XML Sample Response Body
@@ -69,18 +79,9 @@ If the assignation requires an extra payment, the response body will include the
 </content>
 ~~~
 
+#### XML Sample Response Body: Failure
 
 If something goes wrong, the API will respond with a `HTTP 422` error code and the error’s description in the response body:
-
-#### JSON Sample Response Body: Failure
-
-~~~json
-  {
-    "errors": 'You do not have enough units to complete this operation'
-  }
-~~~
-
-#### XML Sample Response Body: Failure
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>

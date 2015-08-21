@@ -91,7 +91,7 @@
         <p>2.
           Use the token to access the LMS</p>
         
-        <p><code>GET https://learninglogin.com/api/logins/authenticate</code></p>
+        <p><code>GET https://learninglogin.com/api/logins/authenticate?username=user_name&amp;token=10e6eacc77745658934b14718cb1210</code></p>
         
         <p>Send a <code>GET</code> request to the URL above with the following parameters:</p>
         
@@ -127,9 +127,9 @@
         
         <h4 id="xml-sample-request-1">XML Sample Request</h4>
         
-        <p><code>GET https://learninglogin.com/api/logins/authenticate.xml</code></p>
+        <p><code>GET https://learninglogin.com/api/logins/authenticate.xml?username=user_name&amp;token=10e6eacc77745658934b14718cb1210</code></p>
         
-        <pre><code class="language-xml">  <span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;  <span class="nt">&lt;content&gt;</span>&#x000A;    <span class="nt">&lt;username&gt;</span>user_name<span class="nt">&lt;/username&gt;</span>&#x000A;    <span class="nt">&lt;token&gt;</span>10e6eacc77745658934b14718cb1210<span class="nt">&lt;/token&gt;</span>&#x000A;  <span class="nt">&lt;/content&gt;</span></code></pre>
+        <p>Parameters should be sent like the URL above just like in a JSON call</p>
       </div>
     </div>
   </body>

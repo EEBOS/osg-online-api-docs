@@ -44,12 +44,6 @@ All date parameters should be sent in a `YYYY-MM-DD` format.
 
 The above request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent.
 
-#### XML Sample Request
-
-`GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&completion_date_gteq=2015-01-01`
-
-Via XML, filters should be sent through the URI string too.
-
 ####  JSON Sample Response Body
 
 ~~~json
@@ -91,6 +85,12 @@ Via XML, filters should be sent through the URI string too.
     "time_spent": "0.0" }
 ]
 ~~~
+
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&completion_date_gteq=2015-01-01`
+
+The above request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent, filters should be sent through the URL string.
 
 #### XML Sample Response Body
 
@@ -139,7 +139,6 @@ Via XML, filters should be sent through the URI string too.
 </train-sessions>
 ~~~
 
-
 ### Show
 
 `https://learninglogin.com/api/train_sessions/:id`
@@ -149,6 +148,25 @@ To retrieve a particular train session send a `GET` request to:
 #### JSON Sample Request
 
 `GET https://learninglogin.com/api/train_sessions/:id`
+
+#### JSON Sample Response
+
+~~~json
+{
+  "id"=>1,
+  "score"=>0,
+  "percent_complete"=>0,
+  "failed_attempts"=>0,
+  "status"=>"Assigned",
+  "cert_expiry"=>"2016-08-21",
+  "completion_date"=>nil,
+  "complete_by"=>nil,
+  "full_name"=>"Michelle Dragsta",
+  "time_spent"=>"0.0",
+  "course_code"=>"WH1",
+  "success"=>nil
+}
+~~~
 
 #### XML Sample Request
 

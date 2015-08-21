@@ -20,10 +20,6 @@ To retrieve the list of courses, send a `GET` request to the URL above, no extra
 
 `GET https://learninglogin.com/api/courses`
 
-#### XML Sample Request
-
-`GET https://learninglogin.com/api/courses.xml`
-
 #### Sample JSON Response Body: Success
 
 ~~~json
@@ -42,6 +38,10 @@ To retrieve the list of courses, send a `GET` request to the URL above, no extra
     }
   ]
 ~~~
+
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/courses.xml`
 
 #### Sample XML Response Body: Success
 

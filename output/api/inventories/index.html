@@ -86,14 +86,6 @@
         
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"course_codes"</span><span class="p">:</span> <span class="p">[</span><span class="err">'JHSC'</span><span class="p">],</span>&#x000A;    <span class="nt">"login_ids"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>&#x000A;  <span class="p">}</span></code></pre>
         
-        <h4 id="xml-sample-request-body">XML Sample Request Body</h4>
-        
-        <p><code>POST https://learninglogin.com/api/inventories/assign_units.xml</code></p>
-        
-        <p>Note: It is important to mantain the “type” of the parameter in the tag for the arrays of course_codes and login-ids</p>
-        
-        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;course-codes</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH1<span class="nt">&lt;/course-code&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH2<span class="nt">&lt;/course-code&gt;</span>&#x000A;  <span class="nt">&lt;/course-codes&gt;</span>&#x000A;  <span class="nt">&lt;login-ids</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;login-id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/login-id&gt;</span>&#x000A;  <span class="nt">&lt;/login-ids&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span></code></pre>
-        
         <h4 id="json-sample-response-body">JSON Sample Response Body</h4>
         
         <p>When courses are successfully assigned, our API will send an empty <code>JSON</code> hash as a response: <code>{ }</code>
@@ -101,17 +93,27 @@
         
         <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"extra_payment"</span><span class="p">:</span> <span class="err">'</span><span class="mi">1</span><span class="err">'</span>&#x000A;  <span class="p">}</span></code></pre>
         
+        <h4 id="json-sample-response-body-failure">JSON Sample Response Body: Failure</h4>
+        
+        <p>If something goes wrong, the API will respond with a <code>HTTP 422</code> error code and the error’s description in the response body:</p>
+        
+        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'You</span> <span class="err">do</span> <span class="err">not</span> <span class="err">have</span> <span class="err">enough</span> <span class="err">units</span> <span class="err">to</span> <span class="err">complete</span> <span class="err">this</span> <span class="err">operation'</span>&#x000A;  <span class="p">}</span></code></pre>
+        
+        <h4 id="xml-sample-request-body">XML Sample Request Body</h4>
+        
+        <p><code>POST https://learninglogin.com/api/inventories/assign_units.xml</code></p>
+        
+        <p>Note: It is important to mantain the “type” of the parameter in the tag for the arrays of course_codes and login-ids</p>
+        
+        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;course-codes</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH1<span class="nt">&lt;/course-code&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH2<span class="nt">&lt;/course-code&gt;</span>&#x000A;  <span class="nt">&lt;/course-codes&gt;</span>&#x000A;  <span class="nt">&lt;login-ids</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;login-id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/login-id&gt;</span>&#x000A;  <span class="nt">&lt;/login-ids&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
+        
         <h4 id="xml-sample-response-body">XML Sample Response Body</h4>
         
         <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;   <span class="nt">&lt;extra-payment&gt;</span>1<span class="nt">&lt;/extra-payment&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
         
-        <p>If something goes wrong, the API will respond with a <code>HTTP 422</code> error code and the error’s description in the response body:</p>
-        
-        <h4 id="json-sample-response-body-failure">JSON Sample Response Body: Failure</h4>
-        
-        <pre><code class="language-json">  <span class="p">{</span>&#x000A;    <span class="nt">"errors"</span><span class="p">:</span> <span class="err">'You</span> <span class="err">do</span> <span class="err">not</span> <span class="err">have</span> <span class="err">enough</span> <span class="err">units</span> <span class="err">to</span> <span class="err">complete</span> <span class="err">this</span> <span class="err">operation'</span>&#x000A;  <span class="p">}</span></code></pre>
-        
         <h4 id="xml-sample-response-body-failure">XML Sample Response Body: Failure</h4>
+        
+        <p>If something goes wrong, the API will respond with a <code>HTTP 422</code> error code and the error’s description in the response body:</p>
         
         <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;errors&gt;</span>&#x000A;   <span class="nt">&lt;error&gt;</span>No courses found for given codes<span class="nt">&lt;/error&gt;</span>&#x000A;<span class="nt">&lt;/errors&gt;</span></code></pre>
       </div>

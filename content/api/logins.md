@@ -23,10 +23,6 @@ To retrieve the list of logins from your account, simply send a `GET` request to
 
 `GET https://learninglogin.com/api/logins`
 
-#### XML Sample Request
-
-`GET https://learninglogin.com/api/logins.xml`
-
 #### JSON Sample Response Body
 
 ~~~json
@@ -49,6 +45,10 @@ To retrieve the list of logins from your account, simply send a `GET` request to
     }
 ]
 ~~~
+
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/logins.xml`
 
 #### XML Sample Response Body
 
@@ -77,10 +77,6 @@ To retrieve the details of a particular login from your account, send a `GET` re
 
 `GET https://learninglogin.com/api/logins/:id`
 
-#### XML Sample Request
-
-`GET https://learninglogin.com/api/logins/:id.xml`
-
 #### JSON Sample Response Body
 
 ~~~json
@@ -93,6 +89,10 @@ To retrieve the details of a particular login from your account, send a `GET` re
     "role": 'Admin'
   }
 ~~~
+
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/logins/:id.xml`
 
 #### XML Sample Response Body
 
@@ -145,6 +145,34 @@ To create a new login, send a `POST` request to the URL above, it must contain t
   }
 ~~~
 
+#### JSON Sample Response Body
+
+When a `login` is successfully  created, our API will send a response with the newly created information:
+
+~~~json
+  {
+    "id": 2,
+    "first_name": 'first',
+    "last_name": 'last',
+    "username": 'username',
+    "email": 'ememe@lsl.de',
+    "role": 'Trainee'
+  }
+~~~
+
+####  JSON Sample Response Body: Failure
+
+Errors will be responded with a `HTTP 422` error code, and an error description.
+
+~~~json
+  {
+    "errors": [
+      'Login role can't be blank',
+      'Login password can't be blank'
+    ]
+  }
+~~~
+
 #### XML Sample Request Body
 
 `POST https://learninglogin.com/api/logins.xml`
@@ -169,22 +197,6 @@ Note: To send udfs list, add `type="array"` to the tag `<udf-list>` and make a l
 </login>
 ~~~
 
-
-#### JSON Sample Response Body
-
-When a `login` is successfully  created, our API will send a response with the newly created information:
-
-~~~json
-  {
-    "id": 2,
-    "first_name": 'first',
-    "last_name": 'last',
-    "username": 'username',
-    "email": 'ememe@lsl.de',
-    "role": 'Trainee'
-  }
-~~~
-
 #### XML Sample Response Body
 
 ~~~xml
@@ -200,20 +212,9 @@ When a `login` is successfully  created, our API will send a response with the n
 </login>
 ~~~
 
-Errors will be responded with a `HTTP 422` error code, and an error description.
-
-####  JSON Sample Response Body: Failure
-
-~~~json
-  {
-    "errors": [
-      'Login role can't be blank',
-      'Login password can't be blank'
-    ]
-  }
-~~~
-
 #### XML Sample Response Body: Failure
+
+Errors will be responded with a `HTTP 422` error code, and an error description.
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -244,20 +245,6 @@ An example request body to update a login's name might be:
   }
 ~~~
 
-#### XML Sample Request Body
-
-`PUT https://learninglogin.com/api/logins/:id.xml`
-
-The XML attributes should be sent inside tag `<login>`. 
-An example request body to update a login's name might be:
-
-~~~xml
-<?xml version="1.0" encoding="UTF-8"?>
-<login>
-   <first-name>name</first-name>
-</login>
-~~~
-
 When the login is successfully updated, our API will send a response with all of the updated login’s information (including fields that were *not* updated).
 
 #### JSON Sample Response Body
@@ -271,6 +258,32 @@ When the login is successfully updated, our API will send a response with all of
     "email": 'ememe@lsl.de',
     "role": 'Trainee'
   }
+~~~
+
+#### JSON Sample Response Body: Failure
+
+Errors will be sent with a `HTTP 422 error code, and an error description.
+
+~~~json
+  {
+    "errors": [
+      'First name can't be blank'
+    ]
+  }
+~~~
+
+#### XML Sample Request Body
+
+`PUT https://learninglogin.com/api/logins/:id.xml`
+
+The XML attributes should be sent inside tag `<login>`. 
+An example request body to update a login's name might be:
+
+~~~xml
+<?xml version="1.0" encoding="UTF-8"?>
+<login>
+   <first-name>name</first-name>
+</login>
 ~~~
 
 #### XML Sample Response Body
@@ -287,18 +300,9 @@ When the login is successfully updated, our API will send a response with all of
 </login>
 ~~~
 
-Errors will be sent with a `HTTP 422 error code, and an error description.
-
-#### Sample Response Body: Failure
-~~~json
-  {
-    "errors": [
-      'First name can't be blank'
-    ]
-  }
-~~~
-
 #### XML Sample Response Body: Failure
+
+Errors will be sent with a `HTTP 422 error code, and an error description.
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>

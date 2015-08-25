@@ -50,38 +50,38 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
 [
   { "id": 3,
     "course_code": "WHMIS",
-    "score": 0,
+    "score": 80,
     "percent_complete": 0,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-01",
     "complete_by": null,
     "full_name": "Michelle Dragsta",
     "time_spent": "0.0" },
 
   { "id": 2,
     "course_code": "TDG",
-    "score": 0,
-    "percent_complete": 0,
+    "score": 80,
+    "percent_complete": 100,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-02",
     "complete_by": null,
-    "full_name": "Michelle Dragsta",
+    "full_name": "Michelle Dragstra",
     "time_spent": "0.0" },
     
   { "id": 1,
     "course_code": "FP",
-    "score": 0,
-    "percent_complete": 0,
+    "score": 80,
+    "percent_complete": 100,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-03",
     "complete_by": null,
-    "full_name": "Michelle Dragsta",
+    "full_name": "Michelle Dragstra",
     "time_spent": "0.0" }
 ]
 ~~~
@@ -90,8 +90,6 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
 
 `GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&completion_date_gteq=2015-01-01`
 
-The above request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent, filters should be sent through the URL string.
-
 #### XML Sample Response Body
 
 ~~~xml
@@ -99,42 +97,42 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
 <train-sessions type="array">
    <train-session>
       <id type="integer">3</id>
-      <score type="integer">0</score>
-      <percent-complete type="integer">0</percent-complete>
+      <course-code>WHMIS</course-code>
+      <score type="integer">80</score>
+      <percent-complete type="integer">100</percent-complete>
       <failed-attempts type="integer">0</failed-attempts>
-      <status>Assigned</status>
-      <cert-expiry type="date">2016-08-04</cert-expiry>
-      <completion-date nil="true" />
+      <status>Completed</status>
+      <cert-expiry type="date">2016-02-06</cert-expiry>
+      <completion-date>2015-01-01</completion-date>
       <complete-by nil="true" />
-      <full-name>Full Name 1</full-name>
-      <time-spent type="decimal">0.0</time-spent>
-      <course-code>WH1</course-code>
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
    </train-session>
    <train-session>
       <id type="integer">2</id>
-      <score type="integer">0</score>
-      <percent-complete type="integer">0</percent-complete>
+      <course-code>TDG</course-code>
+      <score type="integer">80</score>
+      <percent-complete type="integer">100</percent-complete>
       <failed-attempts type="integer">0</failed-attempts>
-      <status>Assigned</status>
+      <status>Completed</status>
       <cert-expiry type="date">2016-08-04</cert-expiry>
-      <completion-date nil="true" />
+      <completion-date>2015-01-02</completion-date>
       <complete-by nil="true" />
-      <full-name>Full Name 1</full-name>
-      <time-spent type="decimal">0.0</time-spent>
-      <course-code>WH1</course-code>
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
    </train-session>
    <train-session>
       <id type="integer">1</id>
-      <score type="integer">0</score>
-      <percent-complete type="integer">0</percent-complete>
+      <score type="integer">80</score>
+      <course-code>FP</course-code>
+      <percent-complete type="integer">100</percent-complete>
       <failed-attempts type="integer">0</failed-attempts>
-      <status>Assigned</status>
+      <status>Completed</status>
       <cert-expiry type="date">2016-08-04</cert-expiry>
-      <completion-date nil="true" />
+      <completion-date>2015-01-03</completion-date>
       <complete-by nil="true" />
-      <full-name>Full Name 1</full-name>
-      <time-spent type="decimal">0.0</time-spent>
-      <course-code>WH1</course-code>
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
    </train-session>
 </train-sessions>
 ~~~
@@ -153,18 +151,18 @@ To retrieve a particular train session send a `GET` request to:
 
 ~~~json
 {
-  "id"=>1,
-  "score"=>0,
-  "percent_complete"=>0,
-  "failed_attempts"=>0,
-  "status"=>"Assigned",
-  "cert_expiry"=>"2016-08-21",
-  "completion_date"=>nil,
-  "complete_by"=>nil,
-  "full_name"=>"Michelle Dragsta",
-  "time_spent"=>"0.0",
-  "course_code"=>"WH1",
-  "success"=>nil
+  "id": 1,
+  "score": 0,
+  "percent_complete": 0,
+  "failed_attempts": 0,
+  "status": 'Assigned',
+  "cert_expiry": '2016-08-21',
+  "completion_date": nil,
+  "complete_by": nil,
+  "full_name": 'Michelle Dragsta',
+  "time_spent": 0,
+  "course_code": 'WHMIS',
+  "success": nil
 }
 ~~~
 
@@ -185,9 +183,10 @@ To retrieve a particular train session send a `GET` request to:
    <cert-expiry type="date">2016-08-04</cert-expiry>
    <completion-date nil="true" />
    <complete-by nil="true" />
-   <full-name>Full Name</full-name>
+   <full-name>Michelle Dragstra</full-name>
    <time-spent type="decimal">0.0</time-spent>
-   <course-code>WH</course-code>
+   <course-code>WMIS</course-code>
+   <success nil="true" />
 </train-session>
 ~~~
 
@@ -223,11 +222,11 @@ Note: Remember to add `type='array'` to `<course-codes>` tag and all parameters 
 
 ~~~xml
 <?xml version='1.0' encoding='UTF-8'?>
-<content>
-  <login-id type='integer'>3</login-id>
+<content>  
   <course-codes type='array'>
-    <course-code>WH1</course-code> 
+    <course-code>JHSC</course-code> 
   </course-codes>
+  <login-id type='integer'>1</login-id>
 </content>
 ~~~
 

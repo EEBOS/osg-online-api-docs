@@ -32,7 +32,7 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "first_name": 'Demo',
       "last_name": 'Login',
       "username": 'demo_login',
-      "email": 'demo_login@learninglocin.com',
+      "email": 'demo_login@learninglogin.com',
       "role": 'Admin'
     },
     {
@@ -40,7 +40,7 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "first_name": 'Demo',
       "last_name": 'Login2',
       "username": 'demo_login2',
-      "email": 'demo_login2@learninglocin.com',
+      "email": 'demo_login2@learninglogin.com',
       "role": 'Trainee'
     }
 ]
@@ -56,14 +56,21 @@ To retrieve the list of logins from your account, simply send a `GET` request to
 <?xml version="1.0" encoding="UTF-8"?>
 <logins type="array">
    <login>
-      <id type="integer">1</id>
-      <first-name>First Name</first-name>
-      <last-name>Last Name</last-name>
-      <username>username</username>
-      <email>demo_login@demo.com</email>
-      <token>bca51ae57828gf8gf7878gfd87</token>
+      <id type="integer">123456</id>
+      <first-name>Demo</first-name>
+      <last-name>Login</last-name>
+      <username>demo_login</username>
+      <email>demo_login@learninglogin.com</email>
       <role>Admin</role>
    </login>
+   <login>
+      <id type="integer">123457</id>
+      <first-name>Demo</first-name>
+      <last-name>Login2</last-name>
+      <username>demo_login2</username>
+      <email>demo_login2@learninglogin.com</email>
+      <role>Trainee</role>
+   </login>   
 </logins>
 ~~~
 
@@ -85,8 +92,9 @@ To retrieve the details of a particular login from your account, send a `GET` re
     "first_name": 'Demo',
     "last_name": 'Login',
     "username": 'demo_login',
-    "email": 'demo_login@learninglocin.com',
-    "role": 'Admin'
+    "email": 'demo_login@learninglogin.com',
+    "role": 'Admin',
+    "token": 'bca51ae57828gf8gf7878gfd87'
   }
 ~~~
 
@@ -102,12 +110,12 @@ To retrieve the details of a particular login from your account, send a `GET` re
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
    <id type="integer">1</id>
-   <first-name>First Name</first-name>
-   <last-name>Last Name</last-name>
-   <username>user_name</username>
-   <email>demo_login@demo.com</email>
+   <first-name>Demo</first-name>
+   <last-name>Login</last-name>
+   <username>demo_login</username>
+   <email>demo_login@learninglogin.com</email>
+   <role>Admin</role>   
    <token>bca51ae57828gf8gf7878gfd87</token>
-   <role>Admin</role>
 </login>
 ~~~
 
@@ -155,14 +163,15 @@ When a `login` is successfully  created, our API will send a response with the n
     "first_name": 'first',
     "last_name": 'last',
     "username": 'username',
-    "email": 'ememe@lsl.de',
-    "role": 'Trainee'
+    "email": 'login@mail.com',    
+    "role": 'Trainee',
+    "token": 'bca51ae57828gf8gf7878gfd87'
   }
 ~~~
 
 ####  JSON Sample Response Body: Failure
 
-Errors will be responded with a `HTTP 422` error code, and an error description.
+Errors will be responded with a `HTTP 422` error code and an error description.
 
 ~~~json
   {
@@ -177,22 +186,18 @@ Errors will be responded with a `HTTP 422` error code, and an error description.
 
 `POST https://learninglogin.com/api/logins.xml`
 
-The XML data should be sent within a tag `<login>`.
-
-Note: To send udfs list, add `type="array"` to the tag `<udf-list>` and make a list of tags `<udf>` with the names like in the example below. 
-
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
-   <first-name>First Name</first-name>
-   <last-name>Last Name</last-name>
-   <email>demo_login@demo.com</email>
-   <username>user_name</username>
+   <first-name>first</first-name>
+   <last-name>last</last-name>
+   <email>login@mail.com</email>
+   <username>username</username>
    <udf-list type="array">
-     <udf>udf_name</udf>
-     <udf>udf_name2</udf>
+     <udf>accounting</udf>
+     <udf>service</udf>
    </udf-list>
-   <role-string>Admin</role-string>
+   <role-string>Trainee</role-string>
    <password>abc123</password>
 </login>
 ~~~
@@ -203,18 +208,18 @@ Note: To send udfs list, add `type="array"` to the tag `<udf-list>` and make a l
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
    <id type="integer">2</id>
-   <first-name>First Name</first-name>
-   <last-name>Last Name</last-name>
-   <username>user_name</username>
-   <email>demo_login@demo.com</email>
-   <token>bca51ae57828gf8gf7878gfd87</token>
-   <role>Admin</role>
+   <first-name>first</first-name>
+   <last-name>last</last-name>
+   <username>username</username>
+   <email>login@mail.com</email>
+    <role-string>Trainee</role-string>   
+   <token>bca51ae57828gf8gf7878gfd87</token>   
 </login>
 ~~~
 
 #### XML Sample Response Body: Failure
 
-Errors will be responded with a `HTTP 422` error code, and an error description.
+Errors will be responded with a `HTTP 422` error code and an error description.
 
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -255,7 +260,7 @@ When the login is successfully updated, our API will send a response with all of
     "first_name": 'New name',
     "last_name": 'last',
     "username": 'username',
-    "email": 'ememe@lsl.de',
+    "email": 'login@mail.com',
     "role": 'Trainee'
   }
 ~~~
@@ -276,9 +281,6 @@ Errors will be sent with a `HTTP 422 error code, and an error description.
 
 `PUT https://learninglogin.com/api/logins/:id.xml`
 
-The XML attributes should be sent inside tag `<login>`. 
-An example request body to update a login's name might be:
-
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
@@ -292,11 +294,11 @@ An example request body to update a login's name might be:
 <?xml version="1.0" encoding="UTF-8"?>
 <login>
    <id>2</id>
-   <first-name>First Name</first-name>
-   <last-name>Last Name</last-name>
-   <username>user_name</username>
-   <email>someemail@email.com</email>
-   <role>2</role>
+   <first-name>name</first-name>
+   <last-name>last</last-name>
+   <username>username</username>
+   <email>login@mail.com</email>
+   <role>Trainee</role>
 </login>
 ~~~
 

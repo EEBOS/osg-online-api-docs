@@ -55,17 +55,15 @@ If something goes wrong, the API will respond with a `HTTP 422` error code and t
 
 `POST https://learninglogin.com/api/inventories/assign_units.xml`
 
-Note: It is important to mantain the "type" of the parameter in the tag for the arrays of course_codes and login-ids
-
 ~~~xml
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
   <course-codes type="array">
-     <course-code>WH1</course-code>
-     <course-code>WH2</course-code>
+     <course-code>JHSC</course-code>    
   </course-codes>
   <login-ids type="array">
      <login-id type="integer">1</login-id>
+     <login-id type="integer">2</login-id>
   </login-ids>
 </content>
 ~~~

@@ -49,15 +49,15 @@ To retrieve the list of courses, send a `GET` request to the URL above, no extra
 <?xml version="1.0" encoding="UTF-8"?>
 <courses type="array">
    <course>
-      <id type="integer">2</id>
-      <name>Transport</name>
-      <code>TCD</code>
+      <id type="integer">1</id>
+      <name>Aerial Lift</name>
+      <code>AL</code>
       <language>English</language>
    </course>
    <course>
-      <id type="integer">1</id>
-      <name>WHM</name>
-      <code>WH1</code>
+      <id type="integer">2</id>
+      <name>AODA</name>
+      <code>AODA</code>
       <language>French</language>
    </course>
 </courses>

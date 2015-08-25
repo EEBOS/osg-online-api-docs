@@ -25,9 +25,9 @@ curl http://learninglogin.com/api/logins -H 'Authorization: Token token="TOKENHE
 
 If your authentication token is not correct, you will receive a “HTTP Token: Access Denied” response.
 
-All of our API responses are sent in `JSON` or `XML` depending on request format.
+All of our API responses are sent in `JSON` or `XML` depending on the format requested.
 
-NOTE: Remember to send header request format as `application/xml` and add sufix .xml for XML requests.
+When no suffix is specified, `JSON` is the default format. To request `XML`, make sure to send a `Content-Type` header of `application/xml` and add `.xml` as a suffix to all URLs.
 
 # Services
 

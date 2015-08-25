@@ -17,6 +17,7 @@ It is possible for your users to access our fully-featured LMS using their API c
   |----------|--------|-----------|---------------------------------------------|
   | username | string | yes       |                                             |            |
   | token    | string | yes       | Login token provided when login is created  |
+  
 
 2.
   Use the token to access the LMS

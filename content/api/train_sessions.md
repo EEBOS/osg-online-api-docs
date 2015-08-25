@@ -5,20 +5,17 @@ title: Train Sessions
 
 ## Train Sessions
 
-
 A `TrainSession` represents a training record in the system. Train Sessions track information such as: date of completion, score, date of assignation, percent complete, etc.
 
 The `/api/train_sessions/` endpoint implements RESTful methods to let you interact with your data.
-
 
 ## Methods
 
 ### Index
 
-`GET https://learninglogin.com/api/train_sessions`
+`https://learninglogin.com/api/train_sessions`
 
 To retrieve the list of train sessions available for your account, simply send a `GET` request to the URL above. Optionally, you can pass a series of filters for searching purposes.
-
 
 #### Available search filters
 
@@ -41,70 +38,163 @@ All date parameters should be sent in a `YYYY-MM-DD` format.
 | assignee_login_username_eq       | string | Filter by the assigned trainee's username.                             |
 | failed_attempts_eq               | string | Filter by # of failed attempts at the Final Quiz.                      |
 
+#### JSON Sample Request
 
-#### Sample Request Body
+`GET https://learninglogin.com/api/train_sessions?score_eq=80&completion_date_gteq=2015-01-01`
 
-`GET https://learninglogin.com/api/train_sessions?score=80&completion_date_gteq=2015-01-01`
+The above request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent.
 
-This request would fetch all training sessions completed from Jan 1st 2015 onwards with a score of "80" percent.
-
-
-#### Sample Response Body
+####  JSON Sample Response Body
 
 ~~~json
 [
   { "id": 3,
     "course_code": "WHMIS",
-    "score": 0,
+    "score": 80,
     "percent_complete": 0,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-01",
     "complete_by": null,
     "full_name": "Michelle Dragsta",
     "time_spent": "0.0" },
 
   { "id": 2,
     "course_code": "TDG",
-    "score": 0,
-    "percent_complete": 0,
+    "score": 80,
+    "percent_complete": 100,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-02",
     "complete_by": null,
-    "full_name": "Michelle Dragsta",
+    "full_name": "Michelle Dragstra",
     "time_spent": "0.0" },
     
   { "id": 1,
     "course_code": "FP",
-    "score": 0,
-    "percent_complete": 0,
+    "score": 80,
+    "percent_complete": 100,
     "failed_attempts": 0,
-    "status": "Assigned",
+    "status": "Completed",
     "cert_expiry": "2016-02-06",
-    "completion_date": null,
+    "completion_date": "2015-01-03",
     "complete_by": null,
-    "full_name": "Michelle Dragsta",
+    "full_name": "Michelle Dragstra",
     "time_spent": "0.0" }
 ]
 ~~~
 
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/train_sessions.xml?score_eq=80&completion_date_gteq=2015-01-01`
+
+#### XML Sample Response Body
+
+~~~xml
+<?xml version="1.0" encoding="UTF-8"?>
+<train-sessions type="array">
+   <train-session>
+      <id type="integer">3</id>
+      <course-code>WHMIS</course-code>
+      <score type="integer">80</score>
+      <percent-complete type="integer">100</percent-complete>
+      <failed-attempts type="integer">0</failed-attempts>
+      <status>Completed</status>
+      <cert-expiry type="date">2016-02-06</cert-expiry>
+      <completion-date>2015-01-01</completion-date>
+      <complete-by nil="true" />
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
+   </train-session>
+   <train-session>
+      <id type="integer">2</id>
+      <course-code>TDG</course-code>
+      <score type="integer">80</score>
+      <percent-complete type="integer">100</percent-complete>
+      <failed-attempts type="integer">0</failed-attempts>
+      <status>Completed</status>
+      <cert-expiry type="date">2016-08-04</cert-expiry>
+      <completion-date>2015-01-02</completion-date>
+      <complete-by nil="true" />
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
+   </train-session>
+   <train-session>
+      <id type="integer">1</id>
+      <score type="integer">80</score>
+      <course-code>FP</course-code>
+      <percent-complete type="integer">100</percent-complete>
+      <failed-attempts type="integer">0</failed-attempts>
+      <status>Completed</status>
+      <cert-expiry type="date">2016-08-04</cert-expiry>
+      <completion-date>2015-01-03</completion-date>
+      <complete-by nil="true" />
+      <full-name>Michelle Dragstra</full-name>
+      <time-spent type="decimal">0.0</time-spent>      
+   </train-session>
+</train-sessions>
+~~~
+
 ### Show
+
+`https://learninglogin.com/api/train_sessions/:id`
 
 To retrieve a particular train session send a `GET` request to:
 
+#### JSON Sample Request
+
 `GET https://learninglogin.com/api/train_sessions/:id`
 
+#### JSON Sample Response
 
+~~~json
+{
+  "id": 1,
+  "score": 0,
+  "percent_complete": 0,
+  "failed_attempts": 0,
+  "status": 'Assigned',
+  "cert_expiry": '2016-08-21',
+  "completion_date": nil,
+  "complete_by": nil,
+  "full_name": 'Michelle Dragsta',
+  "time_spent": 0,
+  "course_code": 'WHMIS',
+  "success": nil
+}
+~~~
+
+#### XML Sample Request
+
+`GET https://learninglogin.com/api/train_sessions/:id.xml`
+
+#### XML Sample Response Body
+
+~~~xml
+<?xml version="1.0" encoding="UTF-8"?>
+<train-session>
+   <id type="integer">1</id>
+   <score type="integer">0</score>
+   <percent-complete type="integer">0</percent-complete>
+   <failed-attempts type="integer">0</failed-attempts>
+   <status>Assigned</status>
+   <cert-expiry type="date">2016-08-04</cert-expiry>
+   <completion-date nil="true" />
+   <complete-by nil="true" />
+   <full-name>Michelle Dragstra</full-name>
+   <time-spent type="decimal">0.0</time-spent>
+   <course-code>WMIS</course-code>
+   <success nil="true" />
+</train-session>
+~~~
 
 ### Unassign
 
-`POST https://learninglogin.com/api/train_sessions/unassign`
+`https://learninglogin.com/api/train_sessions/unassign`
 
 To remove one or more train sessions, send a `POST` request to the url above with the following parameters:
-
 
 | Name         | Type   | Required? | Description                                                   |
 |--------------|--------|-----------|---------------------------------------------------------------|
@@ -113,7 +203,9 @@ To remove one or more train sessions, send a `POST` request to the url above wit
 
 The unassign endpoint allows you to unassign multiple courses for a single user. There is currently no way to unassign multiple courses for multiple users in a single call.
 
-#### Sample Request Body
+####  JSON Sample Request Body
+
+`POST https://learninglogin.com/api/train_sessions/unassign`
 
 ~~~json
   {
@@ -122,11 +214,25 @@ The unassign endpoint allows you to unassign multiple courses for a single user.
   }
 ~~~
 
+#### XML Sample Request Body
+
+`POST https://learninglogin.com/api/train_sessions/unassign.xml`
+
+Note: Remember to add `type='array'` to `<course-codes>` tag and all parameters should be sent inside a tag `<content>`
+
+~~~xml
+<?xml version='1.0' encoding='UTF-8'?>
+<content>  
+  <course-codes type='array'>
+    <course-code>JHSC</course-code> 
+  </course-codes>
+  <login-id type='integer'>1</login-id>
+</content>
+~~~
 
 #### Sample Response Body: Success
 
 When one or more `train_sessions` are successfully destroyed, our API will send an `HTTP 200` response with an empty body.
-
 
 #### Sample Response Body: Failure
 If *none* of the specified courses are found for the login sent, the API will respond with an `HTTP 200` response with the following message:
@@ -134,9 +240,6 @@ If *none* of the specified courses are found for the login sent, the API will re
 ~~~
 Could not find any corresponding train sessions.
 ~~~
-
-
-
 
 ### Course Player
 
@@ -153,6 +256,6 @@ To actually consume a train session through the course player, visit the url:
 If you want to embed the course player into your site, just insert an `iframe` with the url above in the `src` property:
 
 ~~~html
-  <iframe src="http://learninglogin.com/api/train_sessions/1/WHMIS?token=TOKENHERE"> </iframe>
+<iframe src="http://learninglogin.com/api/train_sessions/1/WHMIS?token=TOKENHERE"> </iframe>
 ~~~
 

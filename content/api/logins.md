@@ -19,9 +19,17 @@ A `Login` quite simply represents a user in the system. You may create a new `Lo
 
 To retrieve the list of logins from your account, simply send a `GET` request to the URL above, no extra parameters are required.
 
+#### Available search filters
+
+If you have 'Custom Fields' activated, you can dynamically search any 'Custom Fields' that are associated to your login using the following format:
+
+| Name                             | Type   | Description                                                           |
+|----------------------------------|--------|-----------------------------------------------------------------------|
+| cf[NAME_OF_FIELD]=VALUE          | string | Filter by custom field "NAME OF FIELD" with value "VALUE"             |
+
 #### JSON Sample Request
 
-`GET https://learninglogin.com/api/logins`
+`GET https://learninglogin.com/api/logins?cf[Color]=blue`
 
 #### JSON Sample Response Body
 
@@ -33,7 +41,12 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "last_name": 'Login',
       "username": 'demo_login',
       "email": 'demo_login@learninglogin.com',
-      "role": 'Admin'
+      "role": 'Admin',
+      "custom_fields": {
+          "Color": 'Blue',
+          "Position": 'IT',
+          "Job Title": 'Sales Rep'
+      }      
     },
     {
       "id":123457,
@@ -41,7 +54,12 @@ To retrieve the list of logins from your account, simply send a `GET` request to
       "last_name": 'Login2',
       "username": 'demo_login2',
       "email": 'demo_login2@learninglogin.com',
-      "role": 'Trainee'
+      "role": 'Trainee',
+      "custom_fields": {
+          "Color": 'Blue',
+          "Position": 'Retailer',
+          "Job Title": 'Administrator'
+      }
     }
 ]
 ~~~

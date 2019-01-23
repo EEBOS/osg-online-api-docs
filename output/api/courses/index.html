@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
       <title>
-        OLE LMS API - Courses
+        OSG LMS API - Courses
       </title>
       <link href='/stylesheet.css' rel='stylesheet'>
       <script src='/scripts.js' type='text/javascript'></script>
@@ -14,11 +14,11 @@
     </meta>
   </head>
   <body>
-    <header>
-      <img src='/img/logo.png'>
-    </header>
     <div class='cf' id='wrapper'>
       <div id='sidebar'>
+        <header>
+          <img class='logo-image' src='/img/logo.png'>
+        </header>
         <h2>API</h2>
         <ul>
           <li>
@@ -35,6 +35,9 @@
           </li>
           <li>
             <a href='/api/train_sessions/index.html'>Train Sessions</a>
+          </li>
+          <li>
+            <a href='/api/certificates/index.html'>Certificates</a>
           </li>
           <li>
             <a href='/api/lms_access/index.html'>LMS Access</a>
@@ -71,7 +74,7 @@
         
         <h4 id="sample-xml-response-body-success">Sample XML Response Body: Success</h4>
         
-        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;courses</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;   <span class="nt">&lt;course&gt;</span>&#x000A;      <span class="nt">&lt;id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/id&gt;</span>&#x000A;      <span class="nt">&lt;name&gt;</span>Transport<span class="nt">&lt;/name&gt;</span>&#x000A;      <span class="nt">&lt;code&gt;</span>TCD<span class="nt">&lt;/code&gt;</span>&#x000A;      <span class="nt">&lt;language&gt;</span>English<span class="nt">&lt;/language&gt;</span>&#x000A;   <span class="nt">&lt;/course&gt;</span>&#x000A;   <span class="nt">&lt;course&gt;</span>&#x000A;      <span class="nt">&lt;id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/id&gt;</span>&#x000A;      <span class="nt">&lt;name&gt;</span>WHM<span class="nt">&lt;/name&gt;</span>&#x000A;      <span class="nt">&lt;code&gt;</span>WH1<span class="nt">&lt;/code&gt;</span>&#x000A;      <span class="nt">&lt;language&gt;</span>French<span class="nt">&lt;/language&gt;</span>&#x000A;   <span class="nt">&lt;/course&gt;</span>&#x000A;<span class="nt">&lt;/courses&gt;</span></code></pre>
+        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;courses</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;   <span class="nt">&lt;course&gt;</span>&#x000A;      <span class="nt">&lt;id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/id&gt;</span>&#x000A;      <span class="nt">&lt;name&gt;</span>Aerial Lift<span class="nt">&lt;/name&gt;</span>&#x000A;      <span class="nt">&lt;code&gt;</span>AL<span class="nt">&lt;/code&gt;</span>&#x000A;      <span class="nt">&lt;language&gt;</span>English<span class="nt">&lt;/language&gt;</span>&#x000A;   <span class="nt">&lt;/course&gt;</span>&#x000A;   <span class="nt">&lt;course&gt;</span>&#x000A;      <span class="nt">&lt;id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/id&gt;</span>&#x000A;      <span class="nt">&lt;name&gt;</span>AODA<span class="nt">&lt;/name&gt;</span>&#x000A;      <span class="nt">&lt;code&gt;</span>AODA<span class="nt">&lt;/code&gt;</span>&#x000A;      <span class="nt">&lt;language&gt;</span>French<span class="nt">&lt;/language&gt;</span>&#x000A;   <span class="nt">&lt;/course&gt;</span>&#x000A;<span class="nt">&lt;/courses&gt;</span></code></pre>
       </div>
     </div>
   </body>

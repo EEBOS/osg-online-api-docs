@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
       <title>
-        OLE LMS API - Inventories
+        OSG LMS API - Inventories
       </title>
       <link href='/stylesheet.css' rel='stylesheet'>
       <script src='/scripts.js' type='text/javascript'></script>
@@ -14,11 +14,11 @@
     </meta>
   </head>
   <body>
-    <header>
-      <img src='/img/logo.png'>
-    </header>
     <div class='cf' id='wrapper'>
       <div id='sidebar'>
+        <header>
+          <img class='logo-image' src='/img/logo.png'>
+        </header>
         <h2>API</h2>
         <ul>
           <li>
@@ -35,6 +35,9 @@
           </li>
           <li>
             <a href='/api/train_sessions/index.html'>Train Sessions</a>
+          </li>
+          <li>
+            <a href='/api/certificates/index.html'>Certificates</a>
           </li>
           <li>
             <a href='/api/lms_access/index.html'>LMS Access</a>
@@ -103,9 +106,7 @@
         
         <p><code>POST https://learninglogin.com/api/inventories/assign_units.xml</code></p>
         
-        <p>Note: It is important to mantain the “type” of the parameter in the tag for the arrays of course_codes and login-ids</p>
-        
-        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;course-codes</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH1<span class="nt">&lt;/course-code&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>WH2<span class="nt">&lt;/course-code&gt;</span>&#x000A;  <span class="nt">&lt;/course-codes&gt;</span>&#x000A;  <span class="nt">&lt;login-ids</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;login-id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/login-id&gt;</span>&#x000A;  <span class="nt">&lt;/login-ids&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
+        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;course-codes</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;course-code&gt;</span>JHSC<span class="nt">&lt;/course-code&gt;</span>    &#x000A;  <span class="nt">&lt;/course-codes&gt;</span>&#x000A;  <span class="nt">&lt;login-ids</span> <span class="na">type=</span><span class="s">"array"</span><span class="nt">&gt;</span>&#x000A;     <span class="nt">&lt;login-id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/login-id&gt;</span>&#x000A;     <span class="nt">&lt;login-id</span> <span class="na">type=</span><span class="s">"integer"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/login-id&gt;</span>&#x000A;  <span class="nt">&lt;/login-ids&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
         
         <h4 id="xml-sample-response-body">XML Sample Response Body</h4>
         

@@ -55,7 +55,7 @@ a.active {
     border: 1px solid white;
     border-right: none;
     box-shadow: -1px 2px 6px -2px #ccc;
-    color: #8bae36 !important;
+    color: #009adc !important;
     text-shadow: 1px 1px #fff;
 }
 
@@ -65,19 +65,25 @@ a:visited {
 }
 
 a:hover {
-  color:  #8bae36;
+  color:  #009adc;
 }
 
 
 header {
-    width: 980px;
-    margin: 35px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-image {
+    height: 100px;
+    margin-bottom: 20px;
 }
 
 #wrapper {
     width: 980px;
     margin: 0 auto;
     margin-bottom: 20px;
+    margin-top: 40px;
 
     background-color: #f8f8f5;
     border: 1px solid white;
@@ -92,11 +98,12 @@ header {
     height: auto;
     display: table-cell;
     padding: 22px;
+    vertical-align: top;
     border-left: 1px solid white;
 }
 
 #main h1 {
-  color:  #8bae36;
+  color:  #009adc;
   text-shadow: 1px 1px #ffffff;
   font-size: 40px;
   font-weight: normal;
@@ -108,7 +115,7 @@ header {
 
 #main h2 {
   font-size: 25px;
-  color:  #8bae36;
+  color:  #009adc;
   margin-bottom: 25px;
   text-shadow: 1px 1px #ffffff;
 }
@@ -225,7 +232,7 @@ pre code {
 .p {font-weight: lighter;}
 .hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
 .c { color: #999988; font-style: italic; }
-.err { color: #8bae36; font-weight: lighter; }
+.err { color: #009adc; font-weight: lighter; }
 .k { font-weight: lighter; }
 .o { font-weight: lighter; }
 .cm { color: #999988; font-style: italic; }

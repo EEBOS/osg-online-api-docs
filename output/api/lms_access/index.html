@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
       <title>
-        OLE LMS API - LMS Access
+        OSG LMS API - LMS Access
       </title>
       <link href='/stylesheet.css' rel='stylesheet'>
       <script src='/scripts.js' type='text/javascript'></script>
@@ -14,11 +14,11 @@
     </meta>
   </head>
   <body>
-    <header>
-      <img src='/img/logo.png'>
-    </header>
     <div class='cf' id='wrapper'>
       <div id='sidebar'>
+        <header>
+          <img class='logo-image' src='/img/logo.png'>
+        </header>
         <h2>API</h2>
         <ul>
           <li>
@@ -35,6 +35,9 @@
           </li>
           <li>
             <a href='/api/train_sessions/index.html'>Train Sessions</a>
+          </li>
+          <li>
+            <a href='/api/certificates/index.html'>Certificates</a>
           </li>
           <li>
             <a href='/api/lms_access/index.html' class='active'>LMS Access</a>
@@ -82,16 +85,10 @@
           </tbody>
         </table>
         
-        <h4 id="xml-sample-request">XML Sample Request</h4>
-        
-        <p><code>POST https://learninglogin.com/api/logins/request_token.xml</code></p>
-        
-        <pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>&#x000A;<span class="nt">&lt;content&gt;</span>&#x000A;  <span class="nt">&lt;username&gt;</span>user_name<span class="nt">&lt;/username&gt;</span>&#x000A;  <span class="nt">&lt;token&gt;</span>6300d0cfd5c682dd25838aa23e122d36<span class="nt">&lt;/token&gt;</span>&#x000A;<span class="nt">&lt;/content&gt;</span></code></pre>
-        
         <p>2.
           Use the token to access the LMS</p>
         
-        <p><code>GET https://learninglogin.com/api/logins/authenticate?username=user_name&amp;token=10e6eacc77745658934b14718cb1210</code></p>
+        <p><code>GET https://learninglogin.com/api/logins/authenticate</code></p>
         
         <p>Send a <code>GET</code> request to the URL above with the following parameters:</p>
         
@@ -124,12 +121,6 @@
         <p>After step 2 is completed, you will be <strong>redirected</strong> to <code>https://learninglogin.com/en/inventories</code></p>
         
         <p>Once you access the LMS with your token, it <strong>cannot be reused</strong>. If your session is closed or expired, you will need to repeat this process in order to regain access to our LMS.</p>
-        
-        <h4 id="xml-sample-request-1">XML Sample Request</h4>
-        
-        <p><code>GET https://learninglogin.com/api/logins/authenticate.xml?username=user_name&amp;token=10e6eacc77745658934b14718cb1210</code></p>
-        
-        <p>Parameters should be sent like the URL above just like in a JSON call</p>
       </div>
     </div>
   </body>

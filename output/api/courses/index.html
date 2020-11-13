@@ -58,7 +58,30 @@
         
         <p><code>https://learninglogin.com/api/courses</code></p>
         
-        <p>To retrieve the list of courses, send a <code>GET</code> request to the URL above, no extra parameters are required.</p>
+        <p>To retrieve the list of courses, send a <code>GET</code> request to the URL above, no extra parameters are required.
+        Results are paginated following the <a href="https://tools.ietf.org/html/rfc8288">RFC-8288</a> standard for web linking; links are provided
+        in the response headers so they can be navigated programmaticaly.</p>
+        
+        <h4 id="pagination-response-headers">Pagination response headers</h4>
+        
+        <table>
+          <tbody>
+            <tr>
+              <td>Link               </td>
+              <td>
+        <code>&lt;https://learninglogin.com/api/courses.json?page=1&gt;;</code> <code>rel="first"</code>, <br> <code>&lt;https://learninglogin.com/api/courses.json?page=1&gt;;</code> <code>rel="prev"</code>, <br><code>&lt;https://learninglogin.com/api/courses.json?page=4&gt;;</code> <code>rel="last"</code>, <br><code>&lt;https://learninglogin.com/api/courses.json?page=3&gt;;</code> <code>rel="next"</code>
+        </td>
+            </tr>
+            <tr>
+              <td>Per-Page</td>
+              <td>64</td>
+            </tr>
+            <tr>
+              <td>Total</td>
+              <td>195</td>
+            </tr>
+          </tbody>
+        </table>
         
         <h4 id="json-sample-request">JSON Sample Request</h4>
         

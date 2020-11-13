@@ -16,6 +16,15 @@ The `/api/train_sessions/` endpoint implements RESTful methods to let you intera
 `https://learninglogin.com/api/train_sessions`
 
 To retrieve the list of train sessions available for your account, simply send a `GET` request to the URL above. Optionally, you can pass a series of filters for searching purposes.
+Results are paginated following the [RFC-8288](https://tools.ietf.org/html/rfc8288) standard for web linking; links are provided
+in the response headers so they can be navigated programmaticaly.
+
+#### Pagination response headers
+
+| Link &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	          |  `<https://learninglogin.com/api/train_sessions.json?page=1>;` `rel="first"`, <br/> `<https://learninglogin.com/api/train_sessions.json?page=1>;` `rel="prev"`, <br/>`<https://learninglogin.com/api/train_sessions.json?page=24>;` `rel="last"`, <br/>`<https://learninglogin.com/api/train_sessions.json?page=3>;` `rel="next"` |
+| Per-Page	      |  64                                    |
+| Total 	      |  1535                                  |
+
 
 #### Available search filters
 
@@ -32,7 +41,7 @@ All date parameters should be sent in a `YYYY-MM-DD` format.
 | completion_date_lteq             | string | Filter by completion date less than or equal to the date provided.     |
 | cert_expiry_gt                   | string | Filter by certificate expiry greater or equal to the date provided.    |
 | cert_expiry_lt                   | string | Filter by certificate expiry less than or equal to the date provided.  |
-| percent_complete_eq              | string | Filter by % complete.                                                  | 
+| percent_complete_eq              | string | Filter by % complete.                                                  |
 | complete_by_eq                   | string | Filter by date of completion.                                          |
 | last_attempt_eq                  | string | Filter by date of last attempt.                                        |
 | assignee_login_username_eq       | string | Filter by the assigned trainee's username.                             |
@@ -71,7 +80,7 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
     "complete_by": null,
     "full_name": "Michelle Dragstra",
     "time_spent": "0.0" },
-    
+
   { "id": 1,
     "course_code": "FP",
     "score": 80,
@@ -106,7 +115,7 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
       <completion-date>2015-01-01</completion-date>
       <complete-by nil="true" />
       <full-name>Michelle Dragstra</full-name>
-      <time-spent type="decimal">0.0</time-spent>      
+      <time-spent type="decimal">0.0</time-spent>
    </train-session>
    <train-session>
       <id type="integer">2</id>
@@ -119,7 +128,7 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
       <completion-date>2015-01-02</completion-date>
       <complete-by nil="true" />
       <full-name>Michelle Dragstra</full-name>
-      <time-spent type="decimal">0.0</time-spent>      
+      <time-spent type="decimal">0.0</time-spent>
    </train-session>
    <train-session>
       <id type="integer">1</id>
@@ -132,7 +141,7 @@ The above request would fetch all training sessions completed from Jan 1st 2015 
       <completion-date>2015-01-03</completion-date>
       <complete-by nil="true" />
       <full-name>Michelle Dragstra</full-name>
-      <time-spent type="decimal">0.0</time-spent>      
+      <time-spent type="decimal">0.0</time-spent>
    </train-session>
 </train-sessions>
 ~~~
@@ -222,9 +231,9 @@ Note: Remember to add `type='array'` to `<course-codes>` tag and all parameters 
 
 ~~~xml
 <?xml version='1.0' encoding='UTF-8'?>
-<content>  
+<content>
   <course-codes type='array'>
-    <course-code>JHSC</course-code> 
+    <course-code>JHSC</course-code>
   </course-codes>
   <login-id type='integer'>1</login-id>
 </content>
@@ -258,4 +267,3 @@ If you want to embed the course player into your site, just insert an `iframe` w
 ~~~html
 <iframe src="http://learninglogin.com/api/train_sessions/1/WHMIS?token=TOKENHERE"> </iframe>
 ~~~
-

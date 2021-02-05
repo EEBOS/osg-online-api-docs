@@ -25,7 +25,7 @@ If you have 'Custom Fields' activated, you can dynamically search any 'Custom Fi
 
 | Name                             | Type   | Description                                                           |
 |----------------------------------|--------|-----------------------------------------------------------------------|
-| cf[NAME_OF_FIELD]=VALUE          | string | Filter by custom field "NAME OF FIELD" with value "VALUE"             |
+| `cf[NAME_OF_FIELD]=VALUE`        | string | Filter by custom field "NAME OF FIELD" with value "VALUE"             |
 
 #### JSON Sample Request
 

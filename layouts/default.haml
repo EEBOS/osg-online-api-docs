@@ -4,9 +4,9 @@
     %meta{:charset => "utf-8"}
       %title
         OSG LMS API - #{@item[:title]}
-      %link{:href => @items['/stylesheet/'].path, :rel => "stylesheet"}
-      %script{ type: 'text/javascript', src: @items['/scripts/'].path }
-      %script{ type: 'text/javascript', src: @items['/jquery/'].path }
+      %link{:href => @items['/stylesheet.*'].path, :rel => "stylesheet"}
+      %script{ type: 'text/javascript', src: @items['/scripts.*'].path }
+      %script{ type: 'text/javascript', src: @items['/jquery.*'].path }
         / you don't need to keep this, but it's cool for stats!
         %meta{:content => "nanoc #{Nanoc::VERSION}", :name => "generator"}
   %body
@@ -18,19 +18,19 @@
         %h2 API
         %ul
           %li
-            = link_to_navigation 'Getting Started', '/api/index.html'
+            = link_to_navigation 'Getting Started', '/index.html'
           %li
-            = link_to_navigation 'Logins', '/api/logins/index.html'
+            = link_to_navigation 'Logins', '/api/logins.html'
           %li
-            = link_to_navigation 'Courses', '/api/courses/index.html'
+            = link_to_navigation 'Courses', '/api/courses.html'
           %li
-            = link_to_navigation 'Inventories', '/api/inventories/index.html'
+            = link_to_navigation 'Inventories', '/api/inventories.html'
           %li
-            = link_to_navigation 'Train Sessions', '/api/train_sessions/index.html'
+            = link_to_navigation 'Train Sessions', '/api/train_sessions.html'
           %li
-            = link_to_navigation 'Certificates', '/api/certificates/index.html'            
+            = link_to_navigation 'Certificates', '/api/certificates.html'            
           %li
-            = link_to_navigation 'LMS Access', '/api/lms_access/index.html'
+            = link_to_navigation 'LMS Access', '/api/lms_access.html'
 
       #main
         = find_and_preserve(yield)

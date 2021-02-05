@@ -31,8 +31,8 @@ When no suffix is specified, `JSON` is the default format. To request `XML`, mak
 
 ## Services
 
-* [Logins](/api/logins/index.html)
-* [Courses](/api/courses/index.html)
-* [Inventories](/api/inventories/index.html)
-* [Train Sessions](/api/train_sessions/index.html)
-* [LMS Access](/api/lms_access/index.html)
+* [Logins](/api/logins.html)
+* [Courses](/api/courses.html)
+* [Inventories](/api/inventories.html)
+* [Train Sessions](/api/train_sessions.html)
+* [LMS Access](/api/lms_access.html)

@@ -268,6 +268,21 @@ An example request body to update a login's name might be:
   }
 ~~~
 
+If you have 'Custom Fields' activated, you can update any 'Custom Fields' associated to your login.
+
+~~~json
+  {
+    "login": {
+      "first_name": 'New name',
+      "custom_fields": {
+          "Color": 'Blue',
+          "Position": 'Retailer',
+          "Job Title": 'Administrator'
+      }
+    }
+  }
+~~~
+
 When the login is successfully updated, our API will send a response with all of the updated login’s information (including fields that were *not* updated).
 
 #### JSON Sample Response Body

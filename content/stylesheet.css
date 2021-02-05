@@ -251,7 +251,7 @@ pre code {
 .gs { font-weight: lighter; }
 .gu { color: #800080; font-weight: lighter; }
 .gt { color: #aa0000; }
-.kc { font-weight: lighter; }
+.kc { color: #009adc; font-weight: lighter; }
 .kd { font-weight: lighter; }
 .kn { font-weight: lighter; }
 .kp { font-weight: lighter; }
@@ -274,7 +274,7 @@ pre code {
 .w { color: #bbbbbb; }
 .mf { color: #009999; }
 .mh { color: #009999; }
-.mi { color: #009999; font-weight: lighter }
+.mi { color: #009adc; font-weight: lighter;  }
 .mo { color: #009999; }
 .sb { color: #dd1144; }
 .sc { color: #dd1144; }

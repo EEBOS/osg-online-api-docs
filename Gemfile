@@ -6,4 +6,5 @@ gem 'haml'
 gem 'kramdown'
 gem 'pygments.rb'
 gem 'redcarpet'
-gem "nokogiri"
+gem 'nokogiri'
+gem 'fog-aws'

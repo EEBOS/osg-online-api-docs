@@ -25,7 +25,7 @@ If you have 'Custom Fields' activated, you can dynamically search any 'Custom Fi
 
 | Name                             | Type   | Description                                                           |
 |----------------------------------|--------|-----------------------------------------------------------------------|
-| cf[NAME_OF_FIELD]=VALUE          | string | Filter by custom field "NAME OF FIELD" with value "VALUE"             |
+| `cf[NAME_OF_FIELD]=VALUE`        | string | Filter by custom field "NAME OF FIELD" with value "VALUE"             |
 
 #### JSON Sample Request
 
@@ -264,6 +264,21 @@ An example request body to update a login's name might be:
   {
     "login": {
       "first_name": 'New name'
+    }
+  }
+~~~
+
+If you have 'Custom Fields' activated, you can update any 'Custom Fields' associated to your login.
+
+~~~json
+  {
+    "login": {
+      "first_name": 'New name',
+      "custom_fields": {
+          "Color": 'Blue',
+          "Position": 'Retailer',
+          "Job Title": 'Administrator'
+      }
     }
   }
 ~~~
